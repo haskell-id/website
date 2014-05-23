@@ -11,6 +11,17 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
+    match "lectures/*" $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/post.html" defaultContext
+            >>= loadAndApplyTemplate "templates/base.html" defaultContext
+            >>= relativizeUrls
+
+    match "lectures/*" $ version "raw" $ do
+        route   idRoute
+        compile getResourceBody
+
     match "index.html" $ do
          route idRoute
          compile $ do
