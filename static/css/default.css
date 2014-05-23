@@ -11,27 +11,6 @@ div#header {
     padding: 12px 0px 12px 0px;
 }
 
-div#logo a {
-    color: black;
-    float: left;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-div#header #navigation {
-    text-align: right;
-}
-
-div#header #navigation a {
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 12px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
 div#footer {
     border-top: solid 2px black;
     color: #555;
@@ -47,10 +26,4 @@ h1 {
 
 h2 {
     font-size: 20px;
-}
-
-div.info {
-    color: #555;
-    font-size: 14px;
-    font-style: italic;
 }
