@@ -9,6 +9,10 @@ main = hakyll $ do
 
     match "static/css/*" $ do
         route   idRoute
+        compile compressCssCompiler
+
+    match "static/images/**" $ do
+        route   idRoute
         compile copyFileCompiler
 
     match "lectures/*" $ do
