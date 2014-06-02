@@ -18,7 +18,7 @@ main = hakyll $ do
     match "lectures/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html" defaultContext
+            >>= loadAndApplyTemplate "templates/body.html" defaultContext
             >>= loadAndApplyTemplate "templates/base.html" defaultContext
             >>= relativizeUrls
 
