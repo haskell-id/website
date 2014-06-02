@@ -4,7 +4,7 @@ body {
     margin: 0px auto 0px auto;
     padding:0px;
     text-align:justify;
-    width: 600px;
+    max-width: 600px;
 }
 
 div#footer {
