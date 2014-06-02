@@ -23,6 +23,7 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/base.html" defaultContext
             >>= relativizeUrls
 
+    -- lecture materials, html version
     match "lectures/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
@@ -30,6 +31,7 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/base.html" defaultContext
             >>= relativizeUrls
 
+    -- lecture materials, raw lhs files
     match "lectures/*" $ version "raw" $ do
         route   idRoute
         compile getResourceBody
