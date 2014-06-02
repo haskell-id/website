@@ -15,6 +15,14 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
+    -- lecture index, compiled to /lectures.html
+    match "lectures/lectures.md" $ do
+        route $ gsubRoute "lectures/" (const "") `composeRoutes` setExtension "html"
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/body.html" defaultContext
+            >>= loadAndApplyTemplate "templates/base.html" defaultContext
+            >>= relativizeUrls
+
     match "lectures/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
