@@ -1,3 +1,9 @@
+Berikut ini adalah terjemahan dari [CIS 194: Introduction to Haskell](http://www.seas.upenn.edu/~cis194/), [Universitas Pennsylvania](http://www.upenn.edu).
+
+Materi asli beserta tugas-tugasnya dapat dilihat di [sini](http://www.seas.upenn.edu/~cis194/lectures.html).
+
+**NB: Brent Yorgey akan sangat menghargai jika pembaca tidak mempublikasikan solusi dari tugas-tugasnya online**
+
 - Bab 1: Pengenalan Haskell ( html, lhs )
 - Bab 2: *Algebraic Data Types* ( html, lhs )
 - Bab 3: *Recursion patterns*, *polymorphism*, dan *Prelude* ( html, lhs )
@@ -10,3 +16,5 @@
 - Bab 10: *Applicative functors* I ( html, lhs )
 - Bab 11: *Applicative functors* II ( html, lhs )
 - Bab 12: *Monads* ( html, lhs )
+
+Materi ini merupakan hak cipta dari [Brent Yorgey](http://www.cis.upenn.edu/~byorgey/), dengan lisensi [Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0/).
