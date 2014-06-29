@@ -2,6 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 import           Hakyll
+import           Text.Highlighting.Kate (pygments, styleToCss)
 -------------------------------------------------------------------------------
 
 main :: IO ()
@@ -10,6 +11,10 @@ main = hakyll $ do
     match "static/css/*" $ do
         route   idRoute
         compile compressCssCompiler
+
+    create ["static/css/style.css"] $ do
+        route idRoute
+        compile $ makeItem (compressCss . styleToCss $ pygments)
 
     match "static/images/**" $ do
         route   idRoute
