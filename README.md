@@ -17,3 +17,13 @@ cabal install --only-dependencies
 cabal install
 ./.cabal-sanbox/bin/site watch
 ```
+## Penerjemahan
+
+Sedang dalam proses pengerjaan penerjemahan materi [kuliah di UPenn](http://www.seas.upenn.edu/~cis194/lectures.html)
+
+Status:
+
+chapter 4: Done
+chapter 5: ongoing (kusut)
+
+Jika tertarik membantu, silakan update status di atas
