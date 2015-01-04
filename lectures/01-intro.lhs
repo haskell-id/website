@@ -7,8 +7,8 @@ Dasar Haskell
 
 Bacaan tambahan:
 
--   [Learn You a Haskell for Great Good, bab 2](http://learnyouahaskell.com/starting-out)
--   [Real World Haskell](http://book.realworldhaskell.org/),
+-   [*Learn You a Haskell for Great Good*, bab 2](http://learnyouahaskell.com/starting-out)
+-   [*Real World Haskell*](http://book.realworldhaskell.org/),
     bab 1 dan 2
 
 
@@ -639,7 +639,7 @@ malah bertipe `Char`. *Sesuatu* apa? Baris berikutnya berkata, argumen
 pertama dari `(++)` yang salah, bernama `x`. Baris berikutnya lagi
 membuat semakin jelas. Masalahnya adalah: `x` bertipe `Char` seperti yang
 dikatakan oleh baris pertama. Mengapa diharapkan bertipe list? Karena itu
-digunakan sebagai argumen pertama `(++)`, yang menerima list sebagai argmuen pertama.
+digunakan sebagai argumen pertama `(++)`, yang menerima list sebagai argumen pertama.
 
 Ketika menerima pesan kesalahan yang panjang, janganlah takut. Ambil nafas panjang,
 dan baca dengan seksama. Mungkin kalian tidak akan mengerti seluruhnya, tapi
