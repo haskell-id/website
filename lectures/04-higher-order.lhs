@@ -378,6 +378,6 @@ Ada juga [`foldl`](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelud
     foldr f z [a,b,c] == a `f` (b `f` (c `f` z))
     foldl f z [a,b,c] == ((z `f` a) `f` b) `f` c
 
-Pada umumnya, kita sebaiknya menggunakan [`foldl'` from
+Pada umumnya, kita sebaiknya menggunakan [`foldl'` dari
 `Data.List`](http://haskell.org/ghc/docs/latest/html/libraries/base/Data-List.html#v:foldl)
 , yang sama seperti `foldl` tapi lebih efisien.

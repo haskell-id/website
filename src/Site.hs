@@ -21,8 +21,8 @@ cssHighlight = create ["static/css/style.css"] $ do
 
 -- lecture index, compiled to /lectures.html
 lectureIndex :: Rules ()
-lectureIndex = match "lectures/lectures.md" $ do
-  route $ gsubRoute "lectures/" (const "") `composeRoutes` setExtension "html"
+lectureIndex = match "lectures.md" $ do
+  route $ setExtension "html"
   compile $ pandocCompiler
     >>= loadAndApplyTemplate "templates/body.html" defaultContext
     >>= loadAndApplyTemplate "templates/base.html" defaultContext
