@@ -6,7 +6,7 @@ Materi asli beserta tugas-tugasnya dapat dilihat di [sini](http://www.seas.upenn
 
 - Bab 1: [Pengenalan Haskell](/lectures/01-intro.html) ( [html](/lectures/01-intro.html), [lhs](/lectures/01-intro.lhs) )
 - Bab 2: [*Algebraic Data Types*](/lectures/02-ADTs.html) ( [html](/lectures/02-ADTs.html), [lhs](/lectures/02-ADTs.html) )
-- Bab 3: *Recursion patterns*, *polymorphism*, dan *Prelude* ( html, lhs )
+- Bab 3: [Pola rekursi, polimorfisme, dan *Prelude*](/lectures/03-rec-poly.html) ( [html](/lectures/03-rec-poly.html), [lhs](/lectures/03-rec-poly.lhs) )
 - Bab 4: [*Higher-order programming* dan *type inference*](/lectures/04-higher-order.html) ( [html](/lectures/04-higher-order.html), [lhs](/lectures/04-higher-order.lhs) )
 - Bab 5: [*Polymorphism* lanjutan dan *type classes*](/lectures/05-type-classes.html) ( [html](/lectures/05-type-classes.html), [lhs](/lectures/05-type-classes.lhs) )
 - Bab 6: *Lazy evaluation* ( html, lhs )
