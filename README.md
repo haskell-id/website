@@ -37,6 +37,7 @@ chapter 2: Done
 chapter 3: Done
 chapter 4: Done
 chapter 5: Done
+chapter 6: Ongoing
 ```
 
 Meski beberapa bab sudah selesai, tidak menutup kemungkinan untuk dikoreksi baik dari kesalahan tulis maupun terjemahan yang lebih baik.
