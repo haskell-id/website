@@ -7,8 +7,13 @@ body {
     max-width: 650px;
 }
 
+div#header {
+    border-bottom: solid 1px black;
+    text-align: center;
+}
+
 div#footer {
-    border-top: solid 2px black;
+    border-top: solid 1px black;
     color: #555;
     font-size: 12px;
     margin-top: 30px;
