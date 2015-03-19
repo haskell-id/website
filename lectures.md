@@ -9,7 +9,7 @@ Materi asli beserta tugas-tugasnya dapat dilihat di [sini](http://www.seas.upenn
 - Bab 3: [Pola rekursi, polimorfisme, dan *Prelude*](/lectures/03-rec-poly.html) ( [html](/lectures/03-rec-poly.html), [lhs](/lectures/03-rec-poly.lhs) )
 - Bab 4: [*Higher-order programming* dan *type inference*](/lectures/04-higher-order.html) ( [html](/lectures/04-higher-order.html), [lhs](/lectures/04-higher-order.lhs) )
 - Bab 5: [*Polymorphism* lanjutan dan *type classes*](/lectures/05-type-classes.html) ( [html](/lectures/05-type-classes.html), [lhs](/lectures/05-type-classes.lhs) )
-- Bab 6: *Lazy evaluation* ( html, lhs )
+- Bab 6: [Evaluasi *lazy*](/lectures/06-laziness.html) ( [html](/lectures/06-laziness.html), [lhs](/lectures/06-laziness.lhs) )
 - Bab 7: *Folds* dan *monoids* ( html, lhs )
 - Bab 8: *IO* ( html, lhs )
 - Bab 9: *Functors* ( html, lhs )
