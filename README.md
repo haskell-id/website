@@ -38,7 +38,13 @@ chapter 3: Done
 chapter 4: Done
 chapter 5: Done
 chapter 6: Done
-chapter 7: Ongoing
+chapter 7: Done
+chapter 8: Ongoing
+chapter 9:  ⊥
+chapter 10: ⊥
+chapter 11: ⊥
+chapter 12: ⊥
+
 ```
 
 Meski beberapa bab sudah selesai, tidak menutup kemungkinan untuk dikoreksi baik dari kesalahan tulis maupun terjemahan yang lebih baik.
