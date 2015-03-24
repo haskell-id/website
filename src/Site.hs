@@ -74,3 +74,4 @@ main = hakyll $ do
   lectureRaw
   templates
   siteIndex
+  cname
