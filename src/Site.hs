@@ -59,6 +59,12 @@ siteIndex = match "index.html" $ do
     >>= relativizeUrls
 
 
+cname :: Rules ()
+cname = match "CNAME" $ do
+  route idRoute
+  compile copyFileCompiler
+
+
 main :: IO ()
 main = hakyll $ do
   cssCompressor
