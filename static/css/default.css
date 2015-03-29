@@ -1,3 +1,7 @@
+pre {
+    overflow: visible;
+}
+
 body {
     color: black;
     font-size: 13px;
