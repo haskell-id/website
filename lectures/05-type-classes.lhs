@@ -7,8 +7,8 @@ Polimorfisme lanjutan dan *type classes*
 ==========================================
 
 Polimorfisme (*polymorphism*) di Haskell dikenal sebagai *parametric polymorphism*.
-Ini berarti fungsi polimorfis harus bekerja secara *seragam* terhadap tipe input apapun,
-yang mengakibatkan implikasi yang menarik bagi pemrogram maupun pengguna fungsi
+Ini berarti fungsi polimorfis harus bekerja secara *seragam* terhadap tipe input apapun.
+Hal tersebut memiliki implikasi yang menarik bagi pemrogram maupun pengguna fungsi
 polimorfis tersebut.
 
 *Parametricity*
@@ -20,7 +20,7 @@ Perhatikan tipe
 a -> a -> a
 ~~~~
 
-Ingat bahwa `a` adalah sebuah tipe *variable* yang bisa berarti tipe apa saja.
+Ingat bahwa `a` adalah sebuah *variable* tipe yang bisa berarti tipe apapun.
 Fungsi seperti apa yang bertipe seperti itu?
 
 Mari kita coba begini
@@ -42,11 +42,12 @@ Pesan *error*-nya:
         In an equation for `f': f x y = x && y
 
 Hal ini dikarenakan *pemanggil* fungsi polimorfis yang menentukan tipenya.
-Kita di sini, *implementor* -- yang menulis implementasinya, mencoba memilih
-tipe yang spesifik (`Bool`), tapi tetap ada kemungkinan untuk bertipe
-`String`, `Int`, atau tipe baru buatan orang lain yang didefinisikan dengan `f`.
-Kita tidak mungkin mengetahui tipe apa yang akan kita terima. Dengan kata lain,
-tipe seperti
+Kita yang menulis implementasinya, mencoba memilih tipe yang spesifik (`Bool`),
+tapi tetap ada kemungkinan untuk bertipe `String`, `Int`, atau lainnya.
+Bahkan, bisa juga tipe baru buatan orang lain yang didefinisikan dengan `f`.
+Kita tidak mungkin mengetahui tipe apa yang akan kita terima.
+
+Dengan kata lain, tipe seperti
 
 ~~~~ {.haskell}
 a -> a -> a
@@ -91,19 +92,18 @@ halnya di Java:
     hello
 
 Hal ini tidak bisa dilakukan di Haskell. Haskell tidak memiliki operator
-seperti `instanceof` di Java dan tidak mungkin untuk menanyakan tipe dari
-suatu hal. Salah satu alasannya ialah tipe di Haskell dihapus oleh *compiler*
+seperti `instanceof` di Java, dan tidak mungkin untuk menanyakan tipe dari
+suatu nilai. Salah satu alasannya ialah tipe di Haskell dihapus oleh *compiler*
 setelah dicek: tidak ada informasi tipe di saat *runtime*! Akan tetapi,
 ada pula alasan lainnya.
 
 Gaya polimorfisme seperti ini dikenal sebagai *parametric polymorphism*.
-Fungsi seperti `f :: a -> a -> a` dikatakan *parametric* untuk tipe
-type `a`.  Di sini, "*parametric*" hanyalah sebutan untuk "bekerja
-secara seragam untuk semua tipe yang diberikan". Di Java, gaya
-polimorfisme seperti ini disediakan oleh *generics* (yang terinspirasi
-dari Haskell: salah satu disainer Haskell,
-[Philip Wadler](http://homepages.inf.ed.ac.uk/wadler/), adalah salah satu
-pengembang kunci Java generics).
+Fungsi seperti `f :: a -> a -> a` dikatakan *parametric* untuk tipe `a`.
+Di sini, "*parametric*" hanyalah sebutan untuk "bekerja secara seragam
+untuk semua tipe yang diberikan". Di Java, gaya polimorfisme seperti ini
+disediakan oleh *generics* (yang terinspirasi dari Haskell: salah satu
+disainer Haskell, [Philip Wadler](http://homepages.inf.ed.ac.uk/wadler/),
+adalah salah satu pengembang kunci Java generics).
 
 Jadi fungsi apa yang mungkin bertipe seperti ini? Ternyata hanya ada dua!
 
@@ -130,8 +130,8 @@ Untuk tiap tipe, tentukan perilaku yang mungkin dimiliki.
 Dua pandangan tentang *parametricity*
 -------------------------------------
 
-Sebagai *implementor* (penulis implementasi fungsi) hal ini serasa
-membatasi. Terlebih jika kita sudah terbiasa dengan bahasa yang
+Sebagai penulis implementasi fungsi, ini terasa membatasi.
+Terlebih jika kita sudah terbiasa dengan bahasa yang
 memiliki hal seperti `instanceof` di Java. "Koq gitu? Kenapa
 tidak boleh melakukan X?"
 
@@ -147,7 +147,7 @@ OK, tapi terkadang kita perlu menentukan sesuatu berdasarkan tipe.
 Contohnya, penjumlahan. Kita telah melihat bahwa penjumlahan adalah
 polimorfis (berlaku untuk `Int`, `Integer`, dan `Double`) tapi tentu
 fungsi tersebut perlu mengetahui tipe yang sedang dijumlahkan untuk
-mengetahui apa yang harus dilakukan: menjumlahkan dua `Integer` tentu
+mengetahui apa yang harus dilakukan. Menjumlahkan dua `Integer` tentu
 berbeda dengan menjumlahkan dua `Double`. Jadi bagaimana? Sihir?
 
 Ternyata tidak!  Dan di Haskell, kita bisa menentukan apa yang harus dilakukan
@@ -209,7 +209,7 @@ Jika tipe polimorfis adalah suatu jaminan fungsi akan bekerja dengan
 apapun tipe input yang pemanggil berikan, fungsi polimorfis *type class* 
 adalah jaminan *terbatas* bahwa fungsi akan bekerja dengan apapun
 tipe yang diberikan *selama* tipe tersebut anggota dari *type class*
-yang diperlukan.
+tersebut.
 
 Hal yang perlu diingat, ketika `(==)` (atau *method* *type class*
 lainnya) digunakan, *compiler* menggunakan *type inference*
@@ -267,7 +267,7 @@ istimewa: GHC bisa membuat anggota `Eq` secara otomatis untuk kita.
 > data Foo' = F' Int | G' Char
 >   deriving (Eq, Ord, Show)
 
-Di atas, kita memberitahu GHC untuk menjadikan tipe `Foo` milik kita
+Di atas, kita memberitahu GHC untuk menjadikan tipe `Foo'` milik kita
 anggota dari *type class* `Eq`, `Ord`, dan `Show`.
 
 **Type classes and Java interfaces**
