@@ -14,7 +14,7 @@ git clone git@github.com:haskell-id/website.git
 cd website/
 cabal sandbox init
 cabal install
-./.cabal-sanbox/bin/site watch
+./.cabal-sandbox/bin/site watch
 ```
 
 **Menggunakan Nix/NixOS**
@@ -27,7 +27,7 @@ dist/build/site/site watch
 
 ## Penerjemahan
 
-Sedang dalam proses pengerjaan penerjemahan materi [kuliah di UPenn](http://www.seas.upenn.edu/~cis194/spring13/lectures.html)
+Berikut status penerjemahan materi [kuliah di UPenn](http://www.seas.upenn.edu/~cis194/spring13/lectures.html)
 
 Status:
 
@@ -40,8 +40,8 @@ chapter 5: Done
 chapter 6: Done
 chapter 7: Done
 chapter 8: Done
-chapter 9: Ongoing
-chapter 10: ⊥
+chapter 9: Done
+chapter 10: Ongoing
 chapter 11: ⊥
 chapter 12: ⊥
 
@@ -49,4 +49,4 @@ chapter 12: ⊥
 
 Meski beberapa bab sudah selesai, tidak menutup kemungkinan untuk dikoreksi baik dari kesalahan tulis maupun terjemahan yang lebih baik.
 
-Jika tertarik membantu, silakan update status di atas. Koreksi dan saran bisa melalui *issues*.
+Jika tertarik membantu, silakan update status di atas. Koreksi dan saran bisa melalui *issues* atau *mention* [@haskellID](https://twitter.com/haskellID).

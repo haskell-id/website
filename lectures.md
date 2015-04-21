@@ -12,7 +12,7 @@ Materi asli beserta tugas-tugasnya dapat dilihat di [sini](http://www.seas.upenn
 - Bab 6: [Evaluasi *lazy*](/lectures/06-laziness.html) ( [html](/lectures/06-laziness.html), [lhs](/lectures/06-laziness.lhs) )
 - Bab 7: [*Fold* dan *monoid*](/lectures/07-folds-monoids.html) ( [html](/lectures/07-folds-monoids.html), [lhs](/lectures/07-folds-monoids.lhs) )
 - Bab 8: [*IO*](/lectures/08-IO.html) ( [html](/lectures/08-IO.html), [lhs](/lectures/08-IO.lhs) )
-- Bab 9: *Functors* ( html, lhs )
+- Bab 9: [*Functor*](/lectures/09-functors.html) ( [html](/lectures/09-functors.html), [lhs](/lectures/09-functors.lhs) )
 - Bab 10: *Applicative functors* I ( html, lhs )
 - Bab 11: *Applicative functors* II ( html, lhs )
 - Bab 12: *Monads* ( html, lhs )
