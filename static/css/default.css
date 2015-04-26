@@ -6,7 +6,7 @@ body {
     color: black;
     font-size: 13px;
     margin: 0px auto 0px auto;
-    padding:0px;
+    padding: 0 10px;
     text-align:justify;
     max-width: 650px;
 }
