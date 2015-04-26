@@ -13,7 +13,7 @@ Materi asli beserta tugas-tugasnya dapat dilihat di [sini](http://www.seas.upenn
 - Bab 7: [*Fold* dan *monoid*](/lectures/07-folds-monoids.html) ( [html](/lectures/07-folds-monoids.html), [lhs](/lectures/07-folds-monoids.lhs) )
 - Bab 8: [*IO*](/lectures/08-IO.html) ( [html](/lectures/08-IO.html), [lhs](/lectures/08-IO.lhs) )
 - Bab 9: [*Functor*](/lectures/09-functors.html) ( [html](/lectures/09-functors.html), [lhs](/lectures/09-functors.lhs) )
-- Bab 10: *Applicative functors* I ( html, lhs )
+- Bab 10: [*Applicative functor* I](/lectures/10-applicative.html) ( [html](/lectures/10-applicative.html), [lhs](/lectures/10-applicative.lhs) )
 - Bab 11: *Applicative functors* II ( html, lhs )
 - Bab 12: *Monads* ( html, lhs )
 

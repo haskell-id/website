@@ -7,7 +7,7 @@ Kode sumber website haskell-id. Powered by [hakyll](http://jaspervdj.be/hakyll/i
 **Menggunakan Cabal Sandbox**
 
 - GHC (Glasgow Haskell Compiler) 7.8.4
-- cabal minimal versi 1.18 (fitur sanbox)
+- cabal minimal versi 1.18 (fitur sandbox)
 
 ```
 git clone git@github.com:haskell-id/website.git
@@ -41,8 +41,8 @@ chapter 6: Done
 chapter 7: Done
 chapter 8: Done
 chapter 9: Done
-chapter 10: Ongoing
-chapter 11: ⊥
+chapter 10: Done
+chapter 11: Ongoing
 chapter 12: ⊥
 
 ```
