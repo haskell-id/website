@@ -6,7 +6,7 @@ Kode sumber website haskell-id. Powered by [hakyll](http://jaspervdj.be/hakyll/i
 
 **Menggunakan Cabal Sandbox**
 
-- GHC (Glasgow Haskell Compiler) 7.8.4
+- GHC (Glasgow Haskell Compiler) 7.10
 - cabal minimal versi 1.18 (fitur sandbox)
 
 ```

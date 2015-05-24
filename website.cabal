@@ -14,6 +14,6 @@ executable site
   hs-source-dirs: src
   main-is: Site.hs
   ghc-options: -rtsopts -threaded -Wall
-  build-depends: base >= 4.7.0.2
-               , hakyll >= 4.6.7.1
-               , highlighting-kate >= 0.5.14
+  build-depends: base == 4.8.0.0
+               , hakyll == 4.6.9.0
+               , highlighting-kate == 0.5.15
