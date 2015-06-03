@@ -14,7 +14,7 @@ Materi asli beserta tugas-tugasnya dapat dilihat di [sini](http://www.seas.upenn
 - Bab 8: [*IO*](/lectures/08-IO.html) ( [html](/lectures/08-IO.html), [lhs](/lectures/08-IO.lhs) )
 - Bab 9: [*Functor*](/lectures/09-functors.html) ( [html](/lectures/09-functors.html), [lhs](/lectures/09-functors.lhs) )
 - Bab 10: [*Applicative functor* I](/lectures/10-applicative.html) ( [html](/lectures/10-applicative.html), [lhs](/lectures/10-applicative.lhs) )
-- Bab 11: *Applicative functors* II ( html, lhs )
-- Bab 12: *Monads* ( html, lhs )
+- Bab 11: [*Applicative functor* II](/lectures/11-applicative2.html) ( [html](/lectures/11-applicative2.html), [lhs](/lectures/11-applicative2.html) )
+- Bab 12: *Monad* ( html, lhs )
 
 Materi ini merupakan hak cipta dari [Brent Yorgey](http://www.cis.upenn.edu/~byorgey/), dengan lisensi [Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0/).
