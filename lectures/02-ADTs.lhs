@@ -33,7 +33,8 @@ dari ekspresi bertipe `Thing`.
 > listO'Things :: [Thing]
 > listO'Things = [Shoe, SealingWax, King, Cabbage, King]
 
-Kita bisa menulis fungsi terhadap `Thing`s dengan *pattern-matching*.
+Kita bisa menulis fungsi terhadap `Thing`s dengan pencocokkan pola
+(*pattern-matching*).
 
 > isSmall :: Thing -> Bool
 > isSmall Shoe       = True
@@ -53,7 +54,7 @@ definisi dari `isSmall` seperti berikut:
 Lebih jauh tentang *enumerations*
 ---------------------------------
 
-`Thing` bertipe enumerasi *enumeration type*, mirip dengan yang ada
+`Thing` bertipe enumerasi (*enumeration type*), mirip dengan yang ada
 di bahasa lain seperti Java atau C++. Sebenearnya, enumerasi hanyalah
 kasus spesifik dari sesuatu yang lebih umum di Haskell: tipe data *algebraic*
 (*algebraic data types*).
@@ -80,14 +81,14 @@ Coba tebak: `OK` sendiri bertipe apa?
 > safeDiv _ 0 = Failure
 > safeDiv x y = OK (x / y)
 
-*Pattern-matching* lagi! Perhatikan pada kasus `OK`, kita bisa
+Pencocokkan pola lagi! Perhatikan pada kasus `OK`, kita bisa
 memberi nama kepada `Double`-nya.
 
 > failureToZero :: FailableDouble -> Double
 > failureToZero Failure = 0
 > failureToZero (OK d)  = d
 
-*Data constructors* bisa memiliki lebih dari satu argumen.
+Konstruktor data bisa memiliki lebih dari satu argumen.
 
 > -- Simpan nama, umur, dan Thing favorit dari seseorang.
 > data Person = Person String Int Thing
@@ -102,17 +103,16 @@ memberi nama kepada `Double`-nya.
 > getAge :: Person -> Int
 > getAge (Person _ a _) = a
 
-Perhatikan bahwa *type constructor* dan *data constructor* sama-sama
-bernama `Person`, tetapi mereka berada di *namespace* yang berbeda dan
-dua hal yang berbeda. Hal ini, konstruktor tipe dan data bernama sama,
-cukup umum, dan cukup membingungkan jika belum terbiasa.
+Perhatikan bahwa konstruktor tipe (*type constructor*) dan konstruktor data
+sama-sama bernama `Person`, tetapi mereka berada di *namespace* yang berbeda
+dan merupakan dua hal yang berbeda pula. Konstruktor tipe dan data yang
+bernama sama ini cukup umum dan akan cukup membingungkan jika belum terbiasa.
 
-*Algebraic data types* secara umum
-----------------------------------
+Tipe data *algebraic* secara umum
+---------------------------------
 
-Pada umumnya, sebuah *algebraic data type* memiliki satu atau lebih
-*data constructor*, dan tiap *data constructor* bisa memiliki nol
-atau lebih argumen.
+Pada umumnya, sebuah tipe data *algebraic* memiliki satu atau lebih konstruktor
+data, dan tiap konstruktor data bisa memiliki nol atau lebih argumen.
 
     data AlgDataType = Constr1 Type11 Type12
                      | Constr2 Type21
@@ -122,23 +122,23 @@ atau lebih argumen.
 Ini menyatakan bahwa nilai dari tipe `AlgDataType` bisa dibangun dengan
 empat cara: menggunakan `Constr1`, `Constr2`, `Constr3`, atau `Constr4`.
 Tergantung dari konstruktor yang digunakan, nilai `AlgDataType` bisa
-mengandung nilai-nilai lainnya. Misalnya, jika dibangun dengan menggunakan
-`Constr1` maka nilai tersebut mengandung dua nilai lainnya, satu bertipe
-`Type11` dan satu lagi bertipe `Type12`.
+mengandung nilai-nilai berbeda. Misalnya, jika dibangun dengan menggunakan
+`Constr1` maka nilai tersebut mengandung dua nilai, satu bertipe `Type11`
+dan satu lagi bertipe `Type12`.
 
-Perlu diingat: nama konstruktor tipe dan data harus selalu dimulai dengan
-huruf besar, sedangkan variabel (termasuk nama fungsi) harus selalu dimulai
-dengan huruf kecil. Hal ini untuk memudahkan parser Haskell mengetahui
-mana nama yang merepresentasikan variabel, dan mana yang merepresentasikan
-konstruktor.
+Perlu diingat: nama konstruktor tipe dan konstruktor data harus selalu
+dimulai dengan huruf besar, sedangkan variabel (termasuk nama fungsi) harus
+selalu dimulai dengan huruf kecil. Hal ini untuk memudahkan parser Haskell
+mengetahui mana nama yang merepresentasikan variabel, dan mana yang
+merepresentasikan konstruktor.
 
 
-*Pattern-matching*
-------------------
+Pencocokkan pola
+----------------
 
-Kita sudah melihat *pattern-matching* (pencocokkan pola) di beberapa kasus.
-Kali ini kita akan melihat bagaimana *pattern-matching* bekerja secara umum.
-Pada dasarnya, *pattern-matching* ialah memisahkan nilai berdasarkan
+Kita sudah melihat pencocokkan pola (*pattern-matching*) di beberapa kasus.
+Kali ini kita akan melihat bagaimana pencocokkan pola bekerja secara umum.
+Pada dasarnya, pencocokkan pola ialah memisahkan nilai berdasarkan
 konstruktor yang membangunnya. Informasi tersebut bisa digunakan sebagai
 penentu apa yang harus dilakukan. Ini adalah satu-satunya cara di Haskell.
 
@@ -256,7 +256,7 @@ Kita bisa mendefinisikan list kita sendiri seperti:
 
 *Built-in* list di Haskell cukup serupa. List-list tersebut menggunakan
 sintaks bawaan, `[]` dan `:`. Mereka juga berfungsi pada tipe elemen apapun
-, tidak sekedar `Int` (akan dibahas lebih jauh di bab berikutnya).
+, bukan hanya `Int` (akan dibahas lebih jauh di bab berikutnya).
 
 Kita sering menggunakan fungsi rekursif untuk memproses tipe data rekursif:
 
