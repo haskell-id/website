@@ -9,8 +9,8 @@ Bacaan tambahan:
 
   * "*Learn You a Haskell for Great Good*", "*Higher-Order Functions*" (Bab 5 di buku; [Bab 6 online](http://learnyouahaskell.com/higher-order-functions))
 
-Anonymous functions
--------------------
+Fungsi anonim
+-------------
 
 Andai kita ingin menulis sebuah fungsi
 
@@ -32,9 +32,10 @@ Kita bisa membuatnya begini:
 > lebihDari100 :: [Integer] -> [Integer]
 > lebihDari100 xs = filter ld100 xs
 
-Akan tetapi, cukup repot menamakan `ld100`, karena mungkin kita tak
-akan menggunakannya lagi. Untuk itu, kita bisa menggunakan *anonymous function*, 
-yang juga dikenal sebagai *lambda abstraction*:
+Akan tetapi, cukup merepotkan untuk menamakan `ld100`, karena mungkin kita tak
+akan menggunakannya lagi. Untuk itu, kita bisa menggunakan fungsi anonim
+(*anonymous function*), yang juga dikenal sebagai abstraksi lambda
+(*lambda abstraction*):
 
 > lebihDari100_2 :: [Integer] -> [Integer]
 > lebihDari100_2 xs = filter (\x -> x > 100) xs
@@ -48,18 +49,17 @@ Abstraksi lambda juga bisa memiliki beberapa argumen. Contohnya:
     Prelude> (\x y z -> [x,2*y,3*z]) 5 6 3
     [5,12,9]
 
-Akan tetapi, untuk `lebihDari100`, ada cara lebih baik untuk menulisnya,
-tanpa abstraksi lambda:
+Akan tetapi, untuk `lebihDari100`, ada cara lebih baik untuk menulisnya.
+Yaitu tanpa abstraksi lambda:
 
 > lebihDari100_3 :: [Integer] -> [Integer]
 > lebihDari100_3 xs = filter (>100) xs
 
-`(>100)` adalah sebuah *operator section*: jika `?` adalah sebuah operator,
+`(>100)` adalah sebuah *operator section*. Jika `?` adalah sebuah operator,
 maka `(?y)` sama saja dengan fungsi `\x -> x ? y`, dan `(y?)`
-sama dengan `\x -> y ? x`.
-Dengan kata lain, *operator section* memungkinkan kita
-*partially apply* suatu operator ke salah satu di antara dua argumen.
-Yang kita dapat ialah suatu fungsi dengan satu argumen.
+sama dengan `\x -> y ? x`. Dengan kata lain, *operator section* memungkinkan
+kita menerapkan sebagian (*partially apply*) operator ke salah satu di
+antara dua argumen. Yang kita dapat ialah suatu fungsi dengan satu argumen.
 Contohnya seperti ini:
 
     Prelude> (>100) 102
@@ -82,15 +82,14 @@ bisakah kalian menulis suatu fungsi bertipe ini:
 ?
 
 Mari kita coba. Fungsi tersebut harus menerima dua argumen
-dan mengembalikan suatu fungsi;
-masing-masing argumen juga berupa suatu fungsi.
+dan mengembalikan suatu fungsi. Masing-masing argumen juga berupa suatu fungsi.
 
 ~~~~ {.haskell}
 foo f g = ...
 ~~~~
 
-`...` harus kita ganti dengan suatu fungsi bertipe `a ->
-c`.  Kita bisa membuatnya dengan menggunakan *lambda abstraction*:
+`...` harus kita ganti dengan suatu fungsi bertipe `a -> c`.
+Kita bisa membuatnya dengan menggunakan abstraksi lambda:
 
 ~~~~ {.haskell}
 foo f g = \x -> ...
@@ -145,10 +144,10 @@ kita akan mendapatkan:
 
 Tunggu. Apa yang terjadi? Ke mana tanda kurung di sekitar `(a -> c)`?
 
-*Currying* dan *partial application*
-------------------------------------
+*Currying* dan aplikasi parsial
+-------------------------------
 
-Ingat kalau tipe dari fungsi yang memiliki beberapa argumen (*multi-argument*)
+Ingat kalau tipe dari fungsi yang memiliki beberapa argumen
 terlihat aneh dengan ekstra anak panah? Seperti:
 
 > f :: Int -> Int -> Int
@@ -211,14 +210,14 @@ dengan memindahkan `\x -> ...` dari sisi kanan `=` ke sisi kiri:
 > comp :: (b -> c) -> (a -> b) -> a -> c
 > comp f g x = f (g x)
 
-Ide untuk merepresentasikan fungsi *multi-argument* sebagai fungsi
+Ide untuk merepresentasikan fungsi dengan beberapa arguman sebagai fungsi
 satu argumen disebut *currying*, mengambil nama matematikawan dan ahli
 logika Inggris Haskell Curry (orang yang juga mengispirasi penamaan Haskell).
 Curry hidup sejak 1900-1982 dan banyak menghabiskan hidupnya di Penn State,
 dan juga membantu mengerjakan ENIAC di UPenn. Ide representasi tersebut
 sebenarnya ditemukan oleh Moses Schönfinkel, jadi mungkin kita layak
 menyebutnya *schönfinkeling*. Curry sendiri mengatributkan ide tersebut
-ke Schönfinkel, akan tetapi orang lain sudah terlanjur menyebutnya "currying".
+ke Schönfinkel, akan tetapi orang lain sudah terlanjur menyebutnya *currying*.
 
 Jika kita ingin benar-benar menyatakan sebuah fungsi dengan beberapa argumen,
 kita bisa memberikan satu argumen berupa *tuple*. Fungsi ini
@@ -301,28 +300,28 @@ adalah
 ~~~~
 
 Mengaplikasikannya ke `(>3)` (yang bertipe `Integer -> Bool`) menghasilkan
-fungsi bertipe `[Integer] -> [Integer]`, yang merupakan  fungsi yang tepat untuk
+fungsi bertipe `[Integer] -> [Integer]`, yang merupakan fungsi yang tepat untuk
 digabungkan dengan fungsi lain yang menerima `[Integer]`.
 
 Gaya pemrograman seperti ini yang mendefinisikan fungsi tanpa referensi ke
-argumennya---bisa dibilang menyatakan *definisi* sebuah fungsi ketimbang apa yang 
-fungsi tersebut *lakukan*---disebut sebagai "point-free". Gaya seperti ini lebih
-enak dilihat. Beberapa orang bahkan sampai berkata bahwa gaya "point-free" harus
-sebisa mungkin dipakai, meski tentu jika terlalu jauh malah akan membingungkan.
+argumennya (atau bisa juga dibilang menyatakan *definisi* sebuah fungsi ketimbang
+apa yang fungsi tersebut *lakukan*) disebut sebagai "point-free". Gaya seperti ini
+lebih enak dilihat. Beberapa orang bahkan sampai berkata bahwa gaya "point-free"
+harus sebisa mungkin dipakai, meski tentu jika terlalu jauh malah akan membingungkan.
 `lambdabot` di kanal IRC `#haskell` memiliki perintah `@pl` untuk mengubah fungsi
 menjadi bergaya "point-free". Contohnya:
 
     @pl \f g x y -> f (x ++ g x) (g y)
     join . ((flip . ((.) .)) .) . (. ap (++)) . (.)
 
-Terlihat untuk kasus ini fungsi malah menjadi sulit dibaca.
+Terlihat untuk kasus ini, fungsi malah menjadi sulit dibaca.
 
 *Folds*
 -------
 
-Satu lagi pola rekursi yang akan dibahas: *folds*.
-Berikut adalah beberapa fungsi yang memiliki pola yang serupa: semuanya
-"menggabungkan" elemen-elemen yang dimiliki menjadi satu jawaban.
+Satu lagi pola rekursi yang akan dibahas: *folds* (terjemahan: lipat). Berikut
+adalah beberapa fungsi yang memiliki pola yang serupa: semuanya "menggabungkan"
+elemen-elemen yang dimiliki menjadi satu jawaban.
 
 > sum' :: [Integer] -> Integer
 > sum' []     = 0
@@ -336,8 +335,8 @@ Berikut adalah beberapa fungsi yang memiliki pola yang serupa: semuanya
 > length' []     = 0
 > length' (_:xs) = 1 + length' xs
 
-Apa yang sama dari ketiganya dan apa yang berbeda?
-Kita akan memisahkan bagian yang berbeda dengan menggunakan fungsi "*higher-order*".
+Apa yang sama dari ketiganya dan apa yang berbeda? Kita akan memisahkan
+bagian yang berbeda dengan menggunakan fungsi "*higher-order*".
 
 > fold :: b -> (a -> b -> b) -> [a] -> b
 > fold z f []     = z
@@ -362,8 +361,9 @@ bahkan `(const (1+))`.)
 
 `fold` sudah tersedia di `Prelude`, dengan nama
 [`foldr`](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:foldr).
-Argumen-argumen untuk fungsi `foldr` sedikit berbeda urutannya tapi fungsinya sama.
-Berikut adalah beberapa fungsi dari `Prelude` yang didefinisikan dengan `foldr`:
+Argumen-argumen untuk fungsi `foldr` sedikit berbeda urutannya dengan `fold` tadi,
+meski bekerja dengan cara yang sama. Berikut adalah beberapa fungsi dari `Prelude`
+yang didefinisikan dengan `foldr`:
 
   * `length`  `::          [a] -> Int`
   * `sum`     `:: Num a => [a] -> a`
@@ -373,7 +373,8 @@ Berikut adalah beberapa fungsi dari `Prelude` yang didefinisikan dengan `foldr`:
   * `any`     `:: (a -> Bool) -> [a] -> Bool`
   * `all`     `:: (a -> Bool) -> [a] -> Bool`
 
-Ada juga [`foldl`](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:foldl), yang `fold "dari kiri",
+Ada juga [`foldl`](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:foldl),
+yang "melipat (*fold*) dari kiri",
 
     foldr f z [a,b,c] == a `f` (b `f` (c `f` z))
     foldl f z [a,b,c] == ((z `f` a) `f` b) `f` c
