@@ -6,13 +6,13 @@
 Polimorfisme lanjutan dan *type classes*
 ==========================================
 
-Polimorfisme (*polymorphism*) di Haskell dikenal sebagai *parametric polymorphism*.
-Ini berarti fungsi polimorfis harus bekerja secara *seragam* terhadap tipe input apapun.
-Hal tersebut memiliki implikasi yang menarik bagi pemrogram maupun pengguna fungsi
-polimorfis tersebut.
+Polimorfisme (*polymorphism*) di Haskell dikenal sebagai polimorfisme parametrik
+(*parametric polymorphism*). Ini berarti fungsi polimorfis harus bekerja secara
+*seragam* terhadap tipe input apapun. Hal tersebut memiliki implikasi yang
+menarik bagi pemrogram maupun pengguna fungsi polimorfis tersebut.
 
-*Parametricity*
----------------
+Parametrisitas (*parametricity*)
+--------------------------------
 
 Perhatikan tipe
 
@@ -97,9 +97,9 @@ suatu nilai. Salah satu alasannya ialah tipe di Haskell dihapus oleh *compiler*
 setelah dicek: tidak ada informasi tipe di saat *runtime*! Akan tetapi,
 ada pula alasan lainnya.
 
-Gaya polimorfisme seperti ini dikenal sebagai *parametric polymorphism*.
-Fungsi seperti `f :: a -> a -> a` dikatakan *parametric* untuk tipe `a`.
-Di sini, "*parametric*" hanyalah sebutan untuk "bekerja secara seragam
+Gaya polimorfisme seperti ini dikenal sebagai polimorfisme parametrik.
+Fungsi seperti `f :: a -> a -> a` dikatakan parametrik untuk tipe `a`.
+Di sini, parametrik hanyalah sebutan untuk "bekerja secara seragam
 untuk semua tipe yang diberikan". Di Java, gaya polimorfisme seperti ini
 disediakan oleh *generics* (yang terinspirasi dari Haskell: salah satu
 disainer Haskell, [Philip Wadler](http://homepages.inf.ed.ac.uk/wadler/),
@@ -117,7 +117,7 @@ f2 x y = y
 
 Jadi tipe `a -> a -> a` cukup banyak mengandung informasi.
 
-Mari bermain *parametricity game*! Perhatikan tipe-tipe berikut.
+Mari bermain *game* parametrisitas! Perhatikan tipe-tipe berikut.
 Untuk tiap tipe, tentukan perilaku yang mungkin dimiliki.
 
   * `a -> a`
@@ -127,8 +127,8 @@ Untuk tiap tipe, tentukan perilaku yang mungkin dimiliki.
   * `(b -> c) -> (a -> b) -> (a -> c)`
   * `(a -> a) -> a -> a`
 
-Dua pandangan tentang *parametricity*
--------------------------------------
+Dua pandangan tentang parametrisitas
+------------------------------------
 
 Sebagai penulis implementasi fungsi, ini terasa membatasi.
 Terlebih jika kita sudah terbiasa dengan bahasa yang
@@ -136,10 +136,10 @@ memiliki hal seperti `instanceof` di Java. "Koq gitu? Kenapa
 tidak boleh melakukan X?"
 
 Akan tetapi, ada pandangan berbeda. Sebagai *pengguna* dari fungsi
-polimorfis, *parametricity* bukan berarti *larangan*, tapi lebih
+polimorfis, parametrisitas bukan berarti *larangan*, tapi lebih
 sebagai *jaminan*. Pada umumnya, *tools* akan lebih mudah digunakan
 dan dibuktikan jika *tools*-nya memberikan jaminan tentang *sifatnya*.
-*Parametricity* adalah salah satu alasan mengapa dengan hanya melihat
+Parametrisitas adalah salah satu alasan mengapa dengan hanya melihat
 tipe dari sebuah fungsi Haskell bisa memberitahu kalian banyak hal
 tentang fungsi tersebut.
 
@@ -176,7 +176,7 @@ Apakah yang terjadi?
 `(==)`, `(<)`, dan `(+)` "*type-class polymorphic*".  Secara intuisi,
 *type classes* bisa dianggap sebagai himpunan dari tipe yang memiliki
 beberapa operasi yang dedefinisikan untuk mereka. Fungsi *type class polymorphic*
-hanya menerima tipe yang merupakan anggota (*instances*) dari *type class(es)* tersebut.
+hanya menerima tipe yang merupakan anggota (*instances*) dari *type class* tersebut.
 Sebagai contoh, mari lihat detil dari *type class* `Eq`.
 
 ~~~~ {.haskell}
