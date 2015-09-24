@@ -59,10 +59,8 @@ Sebagai contoh, mari kita cari tahu apa *kind* dari `Int`:
     Prelude> :k Int
     Int :: *
 
-Kita lihat bahwa `Int` memiliki *kind* `*`. Sebenarnya tiap tipe yang
-dimiliki sebuah nilai memiliki *kind* `*`.
-We see that `Int` has kind `*`.  In fact, every type which can
-actually serve as the type of some values has kind `*`.
+Kita lihat bahwa `Int` memiliki *kind* `*`. Sebenarnya tiap tipe dari
+sebuah nilai memiliki *kind* `*`.
 
     Prelude> :k Bool
     Bool :: *
@@ -72,7 +70,7 @@ actually serve as the type of some values has kind `*`.
     Maybe Int :: *
 
 Jika `Maybe Int` memiliki *kind* `*`, bagaimana dengan `Maybe`? Perhatikan
-bahwa tidak ada nilai untuk tipe `Maybe`. Ada nilai untuk tipe `Maybe Int`,
+bahwa tidak ada nilai untuk tipe `Maybe`. Terdapat nilai untuk tipe `Maybe Int`,
 dan tipe `Maybe Bool`, tapi tidak untuk tipe `Maybe`. Tapi `Maybe` merupakan
 sesuatu yang menyerupai tipe yang valid. Jadi apa dong? Apa *kind* yang
 dimilikinya? Mari tanyakan `ghci`:
@@ -197,9 +195,8 @@ Jika kita coba, kita akan mendapatkan *kind mismatch error*:
 
 Jika kita sudah memahami *kind*, pesan di atas cukup jelas.
 
-Cukup masuk akal (secara *kind*) untuk menjadikan, misalnya, `Maybe` sebagai
-anggota dari `Functor`. Mari kita lakukan. Dengan mengikuti tipe, ini menjadi
-sangat mudah:
+Cukup beralasan untuk menjadikan `Maybe` sebagai anggota dari `Functor`.
+Mari kita lakukan. Dengan mengikuti tipe, ini menjadi sangat mudah:
 
 > instance Functor Maybe where
 >   fmap _ Nothing  = Nothing
@@ -213,7 +210,7 @@ Bagaimana dengan list?
 >   -- or just
 >   -- fmap = map
 
-*Easy peasy*.  Bagaimana dengan `IO`? Bisakah menjadikan `IO` sebagai anggota
+Gampang!  Bagaimana dengan `IO`? Bisakah menjadikan `IO` sebagai anggota
 `Functor`?
 
 Tentu.  `fmap :: (a -> b) -> IO a -> IO b` menghasilkan sebuah *IO*
