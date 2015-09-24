@@ -11,6 +11,10 @@ body {
     max-width: 650px;
 }
 
+#content ul {
+    padding-left: 16px;
+}
+
 div#header {
     border-bottom: solid 1px black;
     text-align: center;
