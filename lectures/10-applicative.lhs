@@ -5,7 +5,7 @@
 
 -->
 
-*Applicative functor*, Bagian I
+*Applicative Functor*, Bagian I
 ===============================
 
 Bacaan tambahan:
@@ -64,9 +64,10 @@ di sini? Sekarang kita mau
 ([Name] -> [String] -> [Employee])
 ~~~~
 
-Kita bisa bayangkan dua cara untuk ini. Kita bisa memasangkan satu `Name`
-untuk satu `String` untuk membuat `Employee`, atau kita bisa memasangkan
-`Name` dan `String` dengan segala kemungkinannya.
+Kita bisa bayangkan dua cara untuk ini:
+
+- Kita bisa memasangkan satu `Name` untuk satu `String` untuk membuat `Employee`
+- Kita bisa memasangkan `Name` dan `String` dengan segala kombinasi kemungkinannya.
 
 Atau bagaimana kalau begini: kita punya `(e -> Name)` dan `(e -> String)`
 untuk `e` apapun.  Sebagai contoh, `e` mungkin sebuah struktur data yang
