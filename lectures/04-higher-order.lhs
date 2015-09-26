@@ -171,22 +171,22 @@ Kita bisa menambahkan atau mengurangi tanda kurung di sekitar anak panah
 
 Aplikasi fungsi, kebalikannya, bersifat asosiatif ke *kiri*. `f 3 2`
 sama dengan `(f 3) 2`. Masuk akal mengingat tentang `f` sebenarnya
-menerima satu argumen dan mengembalikan sebuah fungsi: kita *apply* `f`
+menerima satu argumen dan mengembalikan sebuah fungsi: kita terapkan `f`
 ke sebuah argumen `3`, yang mengembalikan fungsi bertipe `Int -> Int`,
 yaitu sebuah fungsi yang menerima sebuah `Int` dan menambahkan 6
-ke argumen tersebut. Lalu kita *apply* fungsi tersebut ke argumen `2`
+ke argumen tersebut. Lalu kita terapkan fungsi tersebut ke argumen `2`
 dengan menuliskan `(f 3) 2`, yang menghasilkan sebuah `Int`. Karena
 aplikasi fungsi asosiatif ke kiri, kita bisa menulis `(f 3) 2` sebagai
 `f 3 2`. Dengan begini, kita mendapatkan notasi yang bagus untuk `f`
 sebagai fungsi yang memiliki beberapa argumen.
 
-Abstraksi lambda untuk fungsi "multi-argument"
+Abstraksi lambda untuk fungsi dengan beberapa argumen
 
 ~~~~ {.haskell}
 \x y z -> ... 
 ~~~~
 
-hanyalah singkatan (*syntax sugar*) dari
+hanyalah versi lain (*syntax sugar*) dari
 
 ~~~~ {.haskell}
 \x -> (\y -> (\z -> ...)).  
@@ -198,7 +198,7 @@ Sebaliknya, definisi fungsi
 f x y z = ... 
 ~~~~
 
-hanyalah *syntax sugar* untuk 
+hanyalah versi lain dari 
 
 ~~~~ {.haskell}
 f = \x -> (\y -> (\z -> ...)).
@@ -213,7 +213,7 @@ dengan memindahkan `\x -> ...` dari sisi kanan `=` ke sisi kiri:
 Ide untuk merepresentasikan fungsi dengan beberapa arguman sebagai fungsi
 satu argumen disebut *currying*, mengambil nama matematikawan dan ahli
 logika Inggris Haskell Curry (orang yang juga mengispirasi penamaan Haskell).
-Curry hidup sejak 1900-1982 dan banyak menghabiskan hidupnya di Penn State,
+Curry (1900-1982) banyak menghabiskan hidupnya di Penn State,
 dan juga membantu mengerjakan ENIAC di UPenn. Ide representasi tersebut
 sebenarnya ditemukan oleh Moses Schönfinkel, jadi mungkin kita layak
 menyebutnya *schönfinkeling*. Curry sendiri mengatributkan ide tersebut
@@ -236,7 +236,7 @@ yang menerima dua argumen, *standard library* menyediakan fungsi `curry` dan
 > unschönfinkel :: (a -> b -> c) -> (a,b) -> c
 > unschönfinkel f (x,y) = f x y
 
-`uncurry` berguna jika kita ingin meng-*apply* sebuah fungsi ke sebuah *pair*.
+`uncurry` berguna jika kita ingin menerapkan sebuah fungsi ke sebuah *pair*.
 Sebagai contoh:
 
     Prelude> uncurry (+) (2,3)
@@ -244,13 +244,13 @@ Sebagai contoh:
 
 **Aplikasi Parsial**
 
-Fakta bahwa fungsi di Haskell *curried* membuat aplikasi parsial (*partial
-application*) menjadi mudah. Aplikasi parsial adalah kita bisa mengambil
-sebuah fungsi yang menerima beberapa argumen dan mengaplikasikannya ke
+Fakta bahwa fungsi di Haskell *curried* membuat aplikasi parsial (atau penerapan sebagian,
+*partial application*) menjadi mudah. Aplikasi parsial adalah kita mengambil
+sebuah fungsi yang menerima beberapa argumen dan menerapkannya ke
 *sebagian* dari argumen-argumen tersebut, dan mendapatkan sebuah fungsi yang
 menerima argumen-argumen sisanya. Tapi seperti yang kita baru saja saksikan,
 di Haskell *tidak ada* fungsi dengan beberapa argumen! Tiap fungsi bisa
-diaplikasikan secara parsial (sebagian) ke argumen pertama (dan satu-satunya),
+diterapkan sebagian ke argumen pertama (dan satu-satunya),
 menghasilkan sebuah fungsi yang menerima argumen-argumen sisanya.
 
 Perhatikan bahwa tidak mudah di Haskell untuk melakukan aplikasi parsial
@@ -289,7 +289,7 @@ yang kita ketahui. Berikut adalah implementasi `foobar` yang lebih idiomatis:
 > foobar' = sum . map (\x -> 7*x + 2) . filter (>3)
 
 Kali ini `foobar` didefinisikan sebagai "pipa" dari tiga fungsi: pertama, kita
-membuang semua elemen yang tidak lebih besar dari tiga; lalu kita *apply* operasi
+membuang semua elemen yang tidak lebih besar dari tiga; lalu kita terapkan operasi
 aritmetik ke tiap elemen sisanya; akhirnya, kita jumlahkan semuanya.
 
 Perhatikan `map` dan `filter` diaplikasikan parsial. Sebagai contoh, tipe `filter`
@@ -359,8 +359,8 @@ Mari tulis ulang `sum'`, `product'`, dan `length'` dengan menggunakan `fold`:
 (Selain `(\_ s -> 1 + s)` kita juga bisa menulisnya `(\_ -> (1+))` atau
 bahkan `(const (1+))`.)
 
-`fold` sudah tersedia di `Prelude`, dengan nama
-[`foldr`](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:foldr).
+`fold` sudah tersedia di `Prelude`, dengan nama [`foldr`]
+(https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Prelude.html#v:foldr)
 Argumen-argumen untuk fungsi `foldr` sedikit berbeda urutannya dengan `fold` tadi,
 meski bekerja dengan cara yang sama. Berikut adalah beberapa fungsi dari `Prelude`
 yang didefinisikan dengan `foldr`:
@@ -373,12 +373,12 @@ yang didefinisikan dengan `foldr`:
   * `any`     `:: (a -> Bool) -> [a] -> Bool`
   * `all`     `:: (a -> Bool) -> [a] -> Bool`
 
-Ada juga [`foldl`](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:foldl),
+Ada juga [`foldl`](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Prelude.html#v:foldl)
 yang "melipat (*fold*) dari kiri",
 
     foldr f z [a,b,c] == a `f` (b `f` (c `f` z))
     foldl f z [a,b,c] == ((z `f` a) `f` b) `f` c
 
 Pada umumnya, kita sebaiknya menggunakan [`foldl'` dari
-`Data.List`](http://haskell.org/ghc/docs/latest/html/libraries/base/Data-List.html#v:foldl)
+`Data.List`](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Data-List.html#v:foldl)
 , yang sama seperti `foldl` tapi lebih efisien.
