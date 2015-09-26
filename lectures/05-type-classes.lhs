@@ -20,7 +20,7 @@ Perhatikan tipe
 a -> a -> a
 ~~~~
 
-Ingat bahwa `a` adalah sebuah *variable* tipe yang bisa berarti tipe apapun.
+Ingat bahwa `a` adalah sebuah variable tipe yang bisa berarti tipe apapun.
 Fungsi seperti apa yang bertipe seperti itu?
 
 Mari kita coba begini
@@ -42,7 +42,7 @@ Pesan *error*-nya:
         In an equation for `f': f x y = x && y
 
 Hal ini dikarenakan *pemanggil* fungsi polimorfis yang menentukan tipenya.
-Kita yang menulis implementasinya, mencoba memilih tipe yang spesifik (`Bool`),
+Implementasi di atas mencoba memilih tipe yang spesifik (`Bool`),
 tapi tetap ada kemungkinan untuk bertipe `String`, `Int`, atau lainnya.
 Bahkan, bisa juga tipe baru buatan orang lain yang didefinisikan dengan `f`.
 Kita tidak mungkin mengetahui tipe apa yang akan kita terima.
@@ -169,13 +169,13 @@ show :: Show a => a -> String
 
 Apakah yang terjadi?
 
-*Type classes*
+*Type class*
 --------------
 
-`Num`, `Eq`, `Ord`, and `Show` adalah *type classes*, dan kita sebut
+`Num`, `Eq`, `Ord`, and `Show` adalah *type class*, dan kita sebut
 `(==)`, `(<)`, dan `(+)` "*type-class polymorphic*".  Secara intuisi,
-*type classes* bisa dianggap sebagai himpunan dari tipe yang memiliki
-beberapa operasi yang dedefinisikan untuk mereka. Fungsi *type class polymorphic*
+*type class* bisa dianggap sebagai himpunan dari tipe yang memiliki
+beberapa operasi yang terdefinisikan untuk mereka. Fungsi *type class polymorphic*
 hanya menerima tipe yang merupakan anggota (*instances*) dari *type class* tersebut.
 Sebagai contoh, mari lihat detil dari *type class* `Eq`.
 
@@ -187,7 +187,7 @@ class Eq a where
 
 Kita bisa membacanya seperti ini: `Eq` dideklarasikan sebagai *type class*
 dengan satu argumen, `a`. Tiap tipe `a` yang ingin menjadi anggota (*instance*)
-dari `Eq` harus mendfinisikan dua fungsi, `(==)` dan `(/=)` dengan tipe
+dari `Eq` harus mendefinisikan dua fungsi, `(==)` dan `(/=)`, dengan tipe
 yang tercantum. Misalnya, untuk membuat `Int` menjadi anggota `Eq` kita
 harus mendefinisikan `(==) :: Int -> Int -> Bool` dan `(/=) ::
 Int -> Int -> Bool`. (Tidak perlu tentunya, karena 
@@ -270,7 +270,7 @@ istimewa: GHC bisa membuat anggota `Eq` secara otomatis untuk kita.
 Di atas, kita memberitahu GHC untuk menjadikan tipe `Foo'` milik kita
 anggota dari *type class* `Eq`, `Ord`, dan `Show`.
 
-**Type classes and Java interfaces**
+***Type class* dan interface di Java**
 
 *Type class* serupa dengan *interface* di Java. Keduanya mendefinisikan
 himpunan tipe/*class* yang mengimplementasikan beberapa operasi yang
@@ -310,35 +310,38 @@ spesifik. Akan tetapi, ada dua hal penting yang menunjukkan kalau
     (biasanya melibatkan semacam pengecekan saat *runtime*).
 
 
-**Standard Type Classes**
+***Type Class* standar**
 
 Berikut adalah beberapa *type class* standar yang perlu kalian ketahui:
 
-  * [Ord](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t%3AOrd)
+  * [Ord](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Prelude.html#t:Ord)
     adalah untuk tipe-tipe yang tiap elemennya bisa diurutkan secara total
     (*totally ordered*). Dengan kata lain, tiap elemennya bisa dibandingkan
     satu sama lain untuk dilihat mana yang lebih kecil dari yang lain.
     Ini menyediakan operasi perbandingan seperti `(<)` dan `(<=)`, serta
     fungsi `compare`.
 
-  * [Num](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t%3ANum)
+  * [Num](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Prelude.html#t:Num)
     adalah untuk tipe "numerik", yang mendukung hal-hal seperti penjumlahan,
-    pengurangn, dan perkalian. Satu hal yang penting: literal *integer*
+    pengurangan, dan perkalian. Satu hal yang penting: literal *integer*
     adalah polimorfis *type class*:
 
         Prelude> :t 5
         5 :: Num a => a
 
     Ini berarti literal seperti `5` bisa digunakan sebagai `Int`,
-    `Integer`, `Double`,atau tipe apapun yang anggota (*instance*) dari
+    `Integer`, `Double`,atau tipe apapun yang merupakan anggota (*instance*) dari
     `Num` (seperti `Rational`, `Complex Double`, atau tipe kalian sendiri...)
 
-  * [Show](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t%3AShow)
+  * [Show](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Prelude.html#t:Show)
     mendefinisikan *method* `show`, yang mengubah nilai menjadi `String`.
 
-  * [Read](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:Eq/Read) adalah dual dari `Show`.
+  * [Read](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Prelude.html#t:Read)
+    adalah dual (catatan penerjemah: istilah dari Category Theory,
+    yang bisa diartikan kurang lebih sebagai "kebalikan") dari `Show`.
 
-  * [Integral](http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t%3AIntegral) mewakili semua tipe bilangan bulat seperti `Int` dan `Integer`.
+  * [Integral](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Prelude.html#t:Integral)
+    mewakili semua tipe bilangan bulat seperti `Int` dan `Integer`.
 
 **Contoh type class**
 
@@ -354,7 +357,7 @@ menjadi sebuah list yang berisi `Int`. Perhatikan tipe dari `toList`:
 toList :: Listable a => a -> [Int]
 ~~~~
 
-Mari kita buat *instance* (anggota) dari `Listable`.  Pertama, sebuah `Int`
+Mari kita buat anggota (*instance*) dari `Listable`.  Pertama, sebuah `Int`
 bisa diubah menjadi sebuah `[Int]` hanya dengan menciptakan list singleton,
 begitu pula dengan `Bool`, dengan mengubah `True` menjadi `1` dan `False`
 menjadi `0`:
@@ -392,7 +395,7 @@ akan mendapatkan `constraint` `Listable` juga. Sebagai contoh:
 sumL :: Listable a => a -> Int
 ~~~~
 
-Masuk akal karena `sumL` hanya akan bekerjauntuk tipe yang merupakan
+Masuk akal karena `sumL` hanya akan bekerja untuk tipe yang merupakan
 anggota dari `Listable`, karena menggunakan `toList`. Bagaimana dengan
 yang ini?
 
@@ -403,7 +406,6 @@ yang ini?
 ~~~~ {.haskell}
 foo :: (Listable a, Ord a) => a -> a -> Bool
 ~~~~
-
 
 `foo` bekerja untuk tipe yang merupakan anggota dari `Listable` dan `Ord`
 , karena menggunakan `toList` dan perbandingan argumen-argumennya.
@@ -419,8 +421,8 @@ menunjukkan bahwa sebuah *pair* bertipe `(a,b)` adalah anggota dari
 `Listable` selama `a` dan `b` juga anggota dari `Listable`. Lalu
 kita bisa menggunakan `toList` untuk `a` dan `b` di dalam definisi
 `toList` untuk *pair*. Definisi ini tidaklah rekursif! Versi `toList`
-untuk *pair* memanggil versi `toList` yang *berbeda*, bukan dirinya
-sendiri.
+untuk *pair* memanggil versi `toList` yang *berbeda*, bukan yang
+didefinisikan di dirinya sendiri.
 
  <!--
 
