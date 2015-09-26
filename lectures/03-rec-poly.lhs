@@ -14,7 +14,7 @@ menulis fungsi rekursif!
 Bagaimana mungkin? Kuncinya adalah menyadari meskipun fungsi rekursif
 bisa melakukan apapun, pada prakteknya ada beberapa pola umum yang
 seringkali muncul. Dengan mengabstrak keluar (*abstracting out*)
-pola-pola tersebut ke fungsi-fungsi *library*, programer bisa
+pola-pola tersebut ke fungsi-fungsi pustaka (*library*), programer bisa
 meninggalkan detil *low level* rekursif ke fungsi-fungsi tersebut,
 dan fokus ke masalah yang *higher level*. Itulah tujuan dari
 *wholemeal programming*.
@@ -68,9 +68,9 @@ terlihat sangat serupa. Pasti ada cara untuk mengabstraksi keluar kesamaannya
 sehingga kita tidak perlu mengulang-ulang.
 
 Ternyata ada caranya. Bisakah kalian menemukannya? Bagian mana yang
-serupa di ketiga hal tersebut dan mana yang berubah?
+serupa di ketiga hal tersebut dan mana yang berbeda?
 
-Yang berubah tentunya adalah operasi yang ingin kita lakukan pada tiap elemen
+Yang berbeda tentunya adalah operasi yang ingin kita lakukan pada tiap elemen
 di list. Kita bisa menyebutnya sebagai fungsi bertipe `Int -> Int`. Di sini
 kita bisa melihat betapa berguna untuk bisa memberikan fungsi sebagai
 input ke fungsi lainnya.
@@ -131,11 +131,11 @@ menulis `filterIntList` seperti berikut:
 ***Fold*** (lipat)
 
 Pola terakhir yang tadi kita singgung adalah "menyimpulkan" atau "merangkum"
-semua elemendi list. Ini biasa disebut operasi *fold* atau *reduce*. Kita
+semua elemen di list. Ini biasa disebut operasi *fold* atau *reduce*. Kita
 akan kembali ke sini minggu depan. Sementara itu, kalian mungkin bisa
 berpikir bagaimana untuk mengabstrak keluar pola ini.
 
-(*Polymorphism*) Polimorfisme
+Polimorfisme (*Polymorphism*)
 -----------------------------
 
 Kita telah menulis beberapa fungsi umum untuk *mapping* dan *filtering*
@@ -183,7 +183,7 @@ beberapa contoh:
 
 **Fungsi polimorfis**
 
-Sekarang mari menggeneralisir `filerIntList` supaya bisa bekerja terhadap
+Sekarang mari menggeneralisir `filterIntList` supaya bisa bekerja terhadap
 `List` yang baru kita buat. Kita bisa mengambil kode `filterIntList`
 yang sudah ada dan mengganti `Empty` dengan `E` dan `Cons` dengan `C`:
 
@@ -224,7 +224,7 @@ adalah tipe yang paling umum untuk `mapList`, berikut implementasinya:
 
 Satu hal penting yang perlu diingat mengenai fungsi polimorfis ialah
 **pemanggil fungsi yang menentukan tipe**. Ketika kalian menulis sebuah
-fungsi polimorfik, fungsi tersebut harus bisa bekerja ke semua tipe.
+fungsi polimorfis, fungsi tersebut harus bisa bekerja ke semua tipe.
 Hal ini --ditambah dengan Haskell yang tidak bisa memutuskan langsung
 berdasarkan tipe-- memiliki implikasi menarik yang akan kita pelajari
 lebih jauh nanti.
@@ -232,18 +232,16 @@ lebih jauh nanti.
 *Prelude*
 ---------
 
-        
 `Prelude` adalah sebuah modul berisi definisi fungsi-fungsi standar yang terimpor
 secara implisit ke tiap program Haskell. [Melihat-lihat dokumentasinya]
-(http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html)
+(https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Prelude.html)
 sangatlah dianjurkan untuk mengenal *tools* yang tersedia di sana.
 
-Tentu saja list polimorfis terdefinisi di `Prelude`, beserta 
-[fungsi-fungsi polimorfis yang berguna untuk bekerja dengan list tersebut]
-(http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#11).
+Tentu saja list polimorfis terdefinisi di `Prelude`, beserta [fungsi-fungsi
+polimorfis untuk list tersebut] (https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Prelude.html#g:13)
 Sebagai contoh, `filter` dan `map` adalah padanan dari `filterList` dan `mapList`
 yang tadi kita bahas. Bahkan, [masih banyak fungsi-fungsi untuk list
-di modul `Data.List`](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Data-List.html).  
+di modul `Data.List`](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Data-List.html).
 
 Tipe polimorfis lain yang cukup berguna untuk diketahui ialah `Maybe`,
 didefinisikan sebagai
@@ -255,9 +253,9 @@ data Maybe a = Nothing | Just a
 Sebuah nilai bertipe `Maybe a` bisa mengandung nilai bertipe `a` (terbungkus
 di dalam konstruktor `Just`), atau berupa `Nothing` (mewakili kegagalan atau kesalahan).
 [Modul `Data.Maybe` memiliki fungsi-fungsi yang bekerja terhadap nilai bertipe
-`Maybe` values](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Data-Maybe.html).
+`Maybe`](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/Data-Maybe.html).
 
-        
+
 Fungsi total dan parsial
 ------------------------
 
@@ -275,7 +273,7 @@ seperti ini.
 
 Apakah yang terjadi jika `head` diberikan list kosong sebagai input?
 Mari kita lihat [kode sumber]
-(http://www.haskell.org/ghc/docs/latest/html/libraries/base/src/GHC-List.html#head)
+(https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.8.1.0/src/GHC-List.html#head)
 dari `head`...
 
 Program akan *crash*!  Tak ada lagi yang bisa dilakukan karena program harus
@@ -288,7 +286,7 @@ input juga disebut parsial. Fungsi yang terdefinisi lengkap pada semua
 kemungkinan input dikenal dengan nama *fungsi total*.
 
 Menghindari fungsi-fungsi parsial sebisa mungkin adalah praktek Haskell
-yang bagus.Bahkan, menghindari fungsi parsial bisa dibilang praktek yang
+yang bagus. Bahkan, menghindari fungsi parsial bisa dibilang praktek yang
 bagus di bahasa pemrograman apapun -- meski sangat sulit di beberapa bahasa.
 Haskell membuat hal ini mudah dan masuk akal.
 
