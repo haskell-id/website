@@ -50,26 +50,31 @@ Kita tahu bahwa kera-kera akan dibebaskan, lalu *counter* akan bertambah,
 dan hasil-hasil tersebut akan diberikan ke `f`. Tidak peduli apakah `f`
 akan menggunakan hasil-hasil tersebut atau tidak.
 
-Jika kedua argumen tersebut bisa dievaluasi secara independen atau tidak,
-dengan urutan bebas, tergantung apakah `f` akan memakainya atau tidak,
-maka ini akan menjadi sangat membingungkan. Ketika "efek samping" seperti
-ini diperbolehkan, kita perlu evaluasi *strict*.
+Jika hal-hal berikut:
+
+- Evaluasi atau tidaknya kedua argumen secara independen
+- Urutan evaluasi kedua argumen tersebut
+
+bergantung kepada apakah `f` akan menggunakan hasilnya, tentunya akan sangat
+membingungkan. Ketika "efek samping" seperti ini diperbolehkan, kita
+perlu evaluasi *strict*.
 
 
 Efek samping dan *purity*
 -------------------------
 
-Jadi yang sebenarnya bermasalah adalah hadir tidaknya *efek samping*
-(*side effects*). Yang dimaksud dengan efek samping ialah "apapun
+Jadi yang sebenarnya bermasalah adalah keberadaan *efek samping*
+(*side effect*). Yang dimaksud dengan efek samping ialah "apapun
 yang dapat menyebabkan evaluasi sebuah ekspresi berinteraksi dengan
-sesuatu di luar ekspresi itu sendiri". Akar permasalahanya adalah
+sesuatu di luar ekspresi itu sendiri". Akar permasalahannya adalah
 interaksi dengan dunia luar tersebut sensitif terhadap waktu. Sebagai
 contoh:
 
 * Mengubah variabel global --- ini bermasalah karena bisa mempengaruhi
   evaluasi ekspresi-ekspresi lain
 * Mencetak ke layar --- ini bermasalah karena bisa saja ini diperlukan
-  dalam urutan tertentu terhadap ekspresi lainnya
+  dalam urutan tertentu terhadap ekspresi lain yang juga melakukan
+  pencetakan ke layar
 * Membaca berkas atau jaringan --- ini bermasalah karena isi dari berkas
   bisa mempengaruhi hasil evaluasi ekspresi
 
@@ -244,7 +249,7 @@ list yang sangat besar karena mungkin saja tidak ada ruang yang cukup
 untuk `stack` sehingga menyebabkan `stack overflow`.
 
 Solusinya adalah dengan menggunakan fungsi `foldl'`, bukan `foldl`.
-`foldl'` memerlukan argumen kedua (akumulator) untuk dievaluasi sebelum
+`foldl'` mengevaluasi argumen kedua (akumulator) sebelum
 melanjutkan, sehingga *thunk* tidak bertambah besar.
 
       foldl' (+) 0 [1,2,3]
@@ -366,15 +371,15 @@ disediakan.
 
 Seperti yang telah disebutkan sebelumnya, melakukan transformasi bertahap
 (*pipelined*) terhadap struktur data yang besar bisa terjadi secara efisien
-dalam penggunaan memori. Sekarang kita bis atahu mengapa: karena *lazy*,
-tiap tahap dalam operasi terjadi sesuai kebutuhan. Hasil hanya diterima
-hanya seperlunya saja jika dibutuhkan oleh proses selanjutnya dalam *pipeline*.
+dalam penggunaan memori. Sekarang kita bisa tahu mengapa: karena *lazy*,
+tiap operasi terjadi secara bertahap. Hasil hanya ada jika dibutuhkan oleh
+proses selanjutnya dalam *pipeline*.
 
 **Pemrograman dinamis**
 
 Satu contoh menarik hasil dari evaluasi *lazy* ialah pemrograman dinamis
 ([*dynamic programming*](http://en.wikipedia.org/wiki/Dynamic_programming)).
-Biasannya kita harus sangat berhati-hati dalam mengisi tabel pemrograman
+Biasanya kita harus sangat berhati-hati dalam mengisi tabel pemrograman
 dinamis sesuai urutan, sehingga tiap kali kita menghitung nilai dari sebuah
 sel, dependensinya sudah terhitung. Jika urutannya salah, hasil yang didapat
 juga salah.
