@@ -339,7 +339,7 @@ Sebenarnya, fungsi tersebut sudah terdefinisi di paket [`safe`]
 
 Mengapa ini ide yang bagus?
 
-1. `safeHead` tak akan pernah *crash*.  
+1. `safeHead` tak akan pernah *crash*.
 2. Tipe `safeHead` memperjelas bahwa fungsi tersebut bisa gagal pada
    beberapa input.
 3. Sistem tipe (*type system*) memastikan pengguna `safeHead` harus

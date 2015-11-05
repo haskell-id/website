@@ -5,6 +5,14 @@ import           Hakyll
 import           Text.Highlighting.Kate (pygments, styleToCss)
 -------------------------------------------------------------------------------
 
+
+-- static
+static :: Rules ()
+static = match "static/**" $ do
+  route   idRoute
+  compile copyFileCompiler
+
+
 -- kompres berkas2 css
 cssCompressor :: Rules ()
 cssCompressor = match "static/css/*" $ do
@@ -69,9 +77,11 @@ main :: IO ()
 main = hakyll $ do
   cssCompressor
   cssHighlight
+  static
   lectureIndex
   lectureHtml
   lectureRaw
   templates
   siteIndex
   cname
+
