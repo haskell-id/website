@@ -27,9 +27,9 @@ cssHighlight = create ["static/css/style.css"] $ do
   compile $ makeItem (compressCss . styleToCss $ pygments)
 
 
--- lecture index, compiled to /lectures.html
-lectureIndex :: Rules ()
-lectureIndex = match "lectures.md" $ do
+-- top level pages, *.md compiled to *.html
+topPages :: Rules ()
+topPages = match "*.md" $ do
   route $ setExtension "html"
   compile $ pandocCompiler
     >>= loadAndApplyTemplate "templates/body.html" defaultContext
@@ -78,7 +78,7 @@ main = hakyll $ do
   cssCompressor
   cssHighlight
   static
-  lectureIndex
+  topPages
   lectureHtml
   lectureRaw
   templates
