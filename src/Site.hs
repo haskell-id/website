@@ -6,6 +6,16 @@ import           Text.Highlighting.Kate (pygments, styleToCss)
 -------------------------------------------------------------------------------
 
 
+toHTML :: Context String -> Rules ()
+toHTML c =  do
+  route $ setExtension "html"
+  compile $ pandocCompiler
+    >>= loadAndApplyTemplate "templates/body.html" c
+    >>= loadAndApplyTemplate "templates/base.html" c
+    >>= relativizeUrls
+
+
+
 -- static
 static :: Rules ()
 static = match "static/**" $ do
@@ -30,22 +40,12 @@ cssHighlight = create ["static/css/style.css"] $ do
 -- top level pages, *.md compiled to *.html
 topPages :: Rules ()
 topPages = match ("*.md" .&&. complement "README.md") $ do
-  route $ setExtension "html"
-  compile $ pandocCompiler
-    >>= loadAndApplyTemplate "templates/body.html" defaultContext
-    >>= loadAndApplyTemplate "templates/base.html" defaultContext
-    >>= relativizeUrls
-
+  toHTML defaultContext
 
 -- lecture materials, html version
 lectureHtml :: Rules ()
 lectureHtml = match "lectures/*" $ do
-  route $ setExtension "html"
-  compile $ pandocCompiler
-    >>= loadAndApplyTemplate "templates/body.html" defaultContext
-    >>= loadAndApplyTemplate "templates/base.html" defaultContext
-    >>= relativizeUrls
-
+  toHTML defaultContext
 
 -- lecture materials, raw lhs files
 lectureRaw :: Rules ()
@@ -62,9 +62,9 @@ siteIndex :: Rules ()
 siteIndex = match "index.html" $ do
   route idRoute
   compile $ do
-  getResourceBody
-    >>= loadAndApplyTemplate "templates/base.html" defaultContext
-    >>= relativizeUrls
+    getResourceBody
+      >>= loadAndApplyTemplate "templates/base.html" defaultContext
+      >>= relativizeUrls
 
 
 cname :: Rules ()
