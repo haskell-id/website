@@ -31,8 +31,9 @@ yang melalui cara yang spesifik dengan OS-nya ([PPA](https://launchpad.net/~hvr/
 AUR, MinGHC, dan lain-lain) atau ada juga yang melakukan kompilasi sendiri.
 
 Biasanya `cabal sandbox` digunakan untuk mengisolasi proyek. Isolasi ini mencegah terjadinya
-dependensi yang bentrok antar proyek tetapi tidak mengizinkan untuk berbagi dependensi tersebut,
-sehingga banyak waktu terbuang untuk kompilasi paket yang sama.
+dependensi yang bentrok karena berbeda versi antar proyek tetapi tidak mengizinkan untuk
+berbagi dependensi yang memiliki kesamaan versi, sehingga banyak waktu terbuang untuk
+kompilasi paket yang sama.
 
 
 ## Haskell Platform
