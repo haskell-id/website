@@ -29,7 +29,7 @@ cssHighlight = create ["static/css/style.css"] $ do
 
 -- top level pages, *.md compiled to *.html
 topPages :: Rules ()
-topPages = match "*.md" $ do
+topPages = match ("*.md" .&&. complement "README.md") $ do
   route $ setExtension "html"
   compile $ pandocCompiler
     >>= loadAndApplyTemplate "templates/body.html" defaultContext
