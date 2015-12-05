@@ -3,40 +3,40 @@ dengan banyaknya cara, ini timbul akibat ketidak-puasan pengguna dengan manajeme
 paket di Haskell.
 
 Metode yang direkomendasikan untuk menginstal Haskell *tools* ialah
-dengan menggunakan Stack. 
+dengan menggunakan Stack.
 
 Catatan:
 
-* GHC: Glasgow Haskell Compiler
+* GHC: [Glasgow Haskell Compiler](https://www.haskell.org/ghc/)
 * cabal-install: *command-line tool* untuk mengurus manajemen paket
 
 ## Stack
 
 Saat ini, [Stack](http://haskellstack.org/) merupakan metode instalasi Haskell yang populer dan mudah.
-Stack akan mengurusi *compiler* untuk kita, isolasi proyek, dan membuat kita berbagi
-Haskell *package* antar proyek, sehingga tidak perlu *compile* hal yang sama berulang kali.
+Stack akan mengunduh *compiler*, mengisolasi proyek, dan mengumpulkan Haskell *package* antar proyek
+di satu tempat, sehingga tidak perlu *compile* hal yang sama berulang kali.
 
-Dengan keuntungan yang sedemikian besar, sedikit langkah ekstra yang diperlukan untuk menginstal
-Stack jadi tidak terasa berat.
+Dengan keuntungan yang sedemikian besar, langkah ekstra yang diperlukan untuk menginstal
+Stack menjadi tidak berarti.
 
-Stack akan mengurusi seluruh *tools* yang diperlukan dengan bertindak sebagai *front end* dari
+Stack akan mengelola seluruh *tools* yang diperlukan dengan bertindak sebagai *front end* dari
 cabal-install.
 
-Stack tersedia dalam berbagai OS dan linux distro. Jika Anda pengguna linux *bleeding edge*, Anda
+Stack tersedia untuk berbagai OS dan linux distro. Jika Anda pengguna linux *bleeding edge*, Anda
 tetap bisa mendapatkan *binary* Stack untuk Linux secara umum.
 
 
-## Instal GHC dan Cabal-Install terpisah
+## Install GHC dan Cabal-Install terpisah
 
 Sebelum Stack populer, sebagian orang menginstall GHC dan cabal-install secara terpisah. Ada
 yang melalui cara yang spesifik dengan OS-nya ([PPA](https://launchpad.net/~hvr/+archive/ubuntu/ghc),
 AUR, MinGHC, dan lain-lain) atau ada juga yang melakukan
 [kompilasi sendiri](http://www.davesquared.net/2014/05/platformless-haskell.html).
 
-Biasanya `cabal sandbox` digunakan untuk mengisolasi proyek. Isolasi ini mencegah terjadinya
-dependensi yang bentrok karena berbeda versi antar proyek tetapi tidak mengizinkan untuk
-berbagi dependensi yang memiliki kesamaan versi. Hal ini menyebabkan dependensi-dependensi yang
-berversi sama antar proyek akan dikompilasi berulang-ulang.
+Untuk mengisolasi proyek, `cabal sandbox` lumrah dilakukan. Isolasi ini mencegah terjadinya
+konflik *package* karena berbeda versi antar proyek, tetapi tidak mengizinkan untuk
+berbagi *package* yang memiliki kesamaan versi. Hal ini mengakibatkan duplikasi paket-paket berversi
+sama antar proyek akan dikompilasi berulang-ulang.
 
 
 ## Haskell Platform
