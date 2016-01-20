@@ -1,4 +1,4 @@
-Berikut ini adalah terjemahan dari [CIS 194: Introduction to Haskell](http://www.seas.upenn.edu/~cis194/spring13) (musim semi 2013), [Universitas Pennsylvania](http://www.upenn.edu).
+Berikut ini adalah terjemahan dari [CIS 194: Introduction to Haskell](http://www.seas.upenn.edu/~cis194/spring13) (musim semi 2013), [Universitas Pennsylvania](http://www.upenn.edu). Materi ini merupakan hak cipta dari [Brent Yorgey](http://ozark.hendrix.edu/~yorgey/), dengan lisensi [Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0/).
 
 Materi asli beserta tugas-tugasnya dapat dilihat di [sini](http://www.seas.upenn.edu/~cis194/spring13/lectures.html).
 
@@ -17,4 +17,4 @@ Materi asli beserta tugas-tugasnya dapat dilihat di [sini](http://www.seas.upenn
 - Bab 11: [*Applicative functor* II](/lectures/11-applicative2.html) ( [html](/lectures/11-applicative2.html), [lhs](/lectures/11-applicative2.html) )
 - Bab 12: [*Monad*](/lectures/12-monads.html) ( [html]((/lectures/12-monads.html)), [lhs]((/lectures/12-monads.lhs)) )
 
-Materi ini merupakan hak cipta dari [Brent Yorgey](http://ozark.hendrix.edu/~yorgey/), dengan lisensi [Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0/).
+Mohon bantuan saran/kritik/koreksi baik dari kesalahan tulis maupun terjemahan yang lebih baik. Kode sumber dari materi dan situs ini tersedia di [github](https://github.com/haskell-id/website").

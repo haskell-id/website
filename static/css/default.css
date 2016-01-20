@@ -28,7 +28,12 @@ body {
     justify-content: space-around;
     align-items: center;
     font-size: 16px;
-    
+}
+
+#header #menu a {
+    text-decoration: none;
+    color: black;
+    padding-right: 5px;
 }
 
 #footer {
