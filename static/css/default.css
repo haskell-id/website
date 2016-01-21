@@ -22,7 +22,7 @@ body {
 }
 
 #header #menu {
-    width: 30%;
+    min-width: 30%;
     text-align: right;
     display: flex;
     justify-content: space-around;
@@ -31,9 +31,9 @@ body {
 }
 
 #header #menu a {
-    text-decoration: none;
     color: black;
-    padding-right: 5px;
+    margin-right: 5px;
+    text-transform: uppercase;
 }
 
 #footer {
