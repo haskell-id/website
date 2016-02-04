@@ -9,6 +9,15 @@ Mohon bantuan saran/kritik/koreksi baik dari kesalahan tulis maupun terjemahan y
 
 ## Menjalankan secara Lokal
 
+**Menggunakan Stack**
+- [Install stack](http://docs.haskellstack.org/en/stable/README.html#how-to-install)
+- `git clone git@github.com:haskell-id/website.git`
+- `cd website/`
+- `stack setup`
+- `stack build`
+- `./stack-work/path-to-binary/site watch`
+
+
 **Menggunakan Cabal Sandbox**
 
 - GHC (Glasgow Haskell Compiler) 7.10
