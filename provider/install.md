@@ -31,17 +31,17 @@ tetap bisa mendapatkan *binary* Stack untuk Linux secara umum.
 
 Sebagai contoh, berikut instruksi untuk menjalankan situs ini pada mesin lokal Anda:
 
-- [install stack] (http://docs.haskellstack.org/en/stable/README.html#how-to-install)
+- [install stack](http://docs.haskellstack.org/en/stable/README.html#how-to-install)
 - clone repo situs ini (https://github.com/haskell-id/website/)
 - masuk ke dalam folder proyek
 - `stack setup`. Ini akan mendownload GHC yang sesuai untuk proyek ini.
 - `stack build`. Kompilasi proyek.
 
-
 Setelah kompilasi, binary dapat ditemukan pada path yang bergantung pada tiap-tiap sistem.
-Path binary penulis pada saat artikel ini ditulis ialah: `/.stack-work/install/x86_64-linux/lts-3.11/7.10.2/bin/`.
+Path binary penulis pada saat artikel ini ditulis ialah: `/.stack-work/install/x86_64-linux/lts-3.11/7.10.2/bin/site`.
+Stack menyediakan perintah `stack exec` untuk mengeksekusi binary.
 
-Untuk situs ini, kita bisa melakukan `site watch` untuk menjalankan webserver lokal di mana kita
+Untuk situs ini, kita bisa melakukan `stack exec site watch` untuk menjalankan webserver lokal di mana kita
 bisa melihat hasil situs di `localhost:8000`. *Long running process* ini juga akan mendeteksi jika
 ada perubahan konten, sehingga kita hanya perlu merefresh browser untuk melihatnya.
 

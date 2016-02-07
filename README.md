@@ -10,12 +10,13 @@ Mohon bantuan saran/kritik/koreksi baik dari kesalahan tulis maupun terjemahan y
 ## Menjalankan secara Lokal
 
 **Menggunakan Stack**
-- [Install stack](http://docs.haskellstack.org/en/stable/README.html#how-to-install)
 - `git clone git@github.com:haskell-id/website.git`
 - `cd website/`
 - `stack setup`
 - `stack build`
-- `./stack-work/path-to-binary/site watch`
+- `stack exec site watch`
+
+Penjelasan lebih lengkap terdapat di [sini](http://haskell.web.id/install.html).
 
 
 **Menggunakan Cabal Sandbox**
