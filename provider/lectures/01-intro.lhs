@@ -37,7 +37,7 @@ mengingat dua hal ini:
 * Program Haskell lebih bermakna *mengevaluasi ekspresi* ketimbang
   *mengeksekusi instruksi*.
 
-Perpaduan keduanya menghasilkan cara berfikir pemrograman yang sepenuhnya berbeda.
+Perpaduan keduanya menghasilkan cara berpikir tentang pemrograman yang sepenuhnya berbeda.
 Kebanyakan waktu kita di semester ini akan dihabiskan mengeksplorasi cara berpikir ini.
 
 ***Pure***
@@ -49,7 +49,7 @@ Ekspresi di Haskell selalu *referentially transparent*, yakni:
 * Ekspresi tidak memiliki "efek samping" (seperti memperbarui variabel
   global atau mencetak ke layar).
 
-* Memanggil fungsi yang sama dengan argumen yang sama selali menghasilkan output
+* Memanggil fungsi yang sama dengan argumen yang sama selalu menghasilkan output
   yang sama setiap waktu.
 
 Hal ini mungkin terdengar gila. Bagaimana mungkin bisa mengerjakan sesuatu

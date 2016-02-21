@@ -49,8 +49,8 @@ Sebagai contoh, kita tambahkan satu ke tiap elemen di list.
 > addOneToAll Empty       = Empty
 > addOneToAll (Cons x xs) = Cons (x+1) (addOneToAll xs)
 
-Atau kita bisa memastkan semua elemen di list tidak negatif dengan
-mengambil nilai absolut:
+Atau kita bisa memastikan semua elemen di list tidak negatif dengan
+mengambil nilai mutlak (*absolute*):
 
 
 > absAll :: IntList -> IntList

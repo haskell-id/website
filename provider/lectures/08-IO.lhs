@@ -59,8 +59,8 @@ Sebaliknya, jika kalian memiliki
 
     r :: Recipe Cake
 
-Apa yang kalian punya?  *Cake*?  Bukan. Kalian hanya memiliki *instruksi*
-bagaimana membuat *cake* (resep), hanya selembar kertas dengan tulisan di atasnya.
+Apa yang kalian punya?  *Cake*?  Bukan. Kalian hanya memiliki *instruksi* (resep)
+untuk membuat *cake*, hanya selembar kertas dengan tulisan di atasnya.
 
 Memiliki resep tak menghasilkan efek apapun. Hanya dengan memegang resep tidak
 akan menyebabkan *oven* menjadi panas, tepung berserak di lantai, dan lain
@@ -122,8 +122,8 @@ dari `IO` yang lebih besar) ke sistem *runtime* Haskell melalui `main`.
 Menggabungkan `IO`
 ------------------
 
-Sudah jelas kalau kita perlu sebuah cara untuk menggabungkan komputasi
-`IO` menjadi.
+Sudah jelas kalau kita perlu sebuah cara untuk menggabungkan komputasi-
+komputasi `IO` menjadi satu komputasi yang lebih besar.
 
 Cara paling sederhana untuk menggabungkan dua buah komputasi `IO` ialah
 dengan menggunakan operator `(>>)` (dilafalkan "*and then*", terjemahan:

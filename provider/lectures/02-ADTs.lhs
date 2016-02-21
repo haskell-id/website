@@ -7,8 +7,8 @@ Bacaan tambahan:
   * [*Real World Haskell*](http://book.realworldhaskell.org/),
     bab 2 dan 3
 
-*Enumeration types*
--------------------
+Tipe Enumerasi
+--------------
 
 Seperti bahasa pemrograman lain, Haskell membolehkan programer membuat
 tipe enumerasi (*enumeration types*) sendiri. Contoh sederhana:
@@ -51,11 +51,11 @@ definisi dari `isSmall` seperti berikut:
 > isSmall2 King = False
 > isSmall2 _    = True
 
-Lebih jauh tentang *enumerations*
----------------------------------
+Lebih jauh tentang enumerasi
+----------------------------
 
 `Thing` bertipe enumerasi (*enumeration type*), mirip dengan yang ada
-di bahasa lain seperti Java atau C++. Sebenearnya, enumerasi hanyalah
+di bahasa lain seperti Java atau C++. Sebenarnya, enumerasi hanyalah
 kasus spesifik dari sesuatu yang lebih umum di Haskell: tipe data *algebraic*
 (*algebraic data types*).
 Sebagai contoh tipe data yang bukan sekedar enumerasi, perhatikan
@@ -182,7 +182,7 @@ Itulah ide utama dari pola, tapi ada beberapa hal lain yang perlu diperhatikan.
 
     Perhatikan bagaimana kita menumpuk pola `SealingWax` di dalam pola `Person`.
 
-*Grammar* berikut mendifinisikan apa yang bisa digunakan sebagai pola:    
+*Grammar* berikut mendefinisikan apa yang bisa digunakan sebagai pola:    
 
     pat ::= _
          |  var
