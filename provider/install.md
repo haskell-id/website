@@ -61,7 +61,7 @@ Untuk instalasi, silahkan merujuk pada tautan berikut (berbahasa Inggris):
 - [OS X](http://www.haskell.org/platform/mac.html)
 - [Windows](http://www.haskell.org/platform/windows.html)
 
-### Contoh Proyek
+## Contoh Proyek
 
 Sebagai contoh, berikut ini adalah instruksi untuk menjalankan situs ini pada mesin lokal Anda dengan menggunakan Stack sebagai alat yang direkomendasikan:
 
