@@ -267,8 +267,8 @@ Perhatikan tipe polimorfis berikut:
 ~~~~
 
 Fungsi seperti apa yang bertipe demikian? Tipe di atas menyatakan bahwa
-jika diberi list apapun yang bertipe `a`, fungsi tersebut harus sebuah
-nilai bertipe `a`. Sebagai contoh, fungsi `head` di *Prelude* bertipe
+jika diberi list apapun yang bertipe `a`, fungsi tersebut harus mengembalikan
+sebuah nilai bertipe `a`. Sebagai contoh, fungsi `head` di *Prelude* bertipe
 seperti ini.
 
 Apakah yang terjadi jika `head` diberikan list kosong sebagai input?

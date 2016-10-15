@@ -36,7 +36,7 @@ Perhatikan tipe data *binary tree* berikut, yang menyimpan data di dalam
 > leaf :: a -> Tree a
 > leaf x = Node Empty x Empty
 
-Mari kita buat sebuahfungsi untuk menghitung besarnya *tree* tersebut (banyaknya
+Mari kita buat sebuah fungsi untuk menghitung besarnya *tree* tersebut (banyaknya
 *node*):
 
 > treeSize :: Tree a -> Integer

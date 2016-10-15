@@ -52,7 +52,7 @@ Bahasan singkat tentang *kind*
 
 Seperti halnya ekspresi yang memiliki tipe, tipe juga memiliki "tipe",
 yang disebut *kind* (translasi: jenis). Sebelum kalian bertanya: tidak,
-tak ada lagi tingkat di atas *kind* -- paling tidak, tidak di Haskell.
+tak ada lagi tingkat di atas *kind* -- setidaknya di Haskell.
 Di `ghci` kita bisa menanyakan *kind* dari tipe dengan menggunakan `:kind`.
 Sebagai contoh, mari kita cari tahu apa *kind* dari `Int`:
 
@@ -136,7 +136,7 @@ OK, bagaimana dengan ini?
 dan yang kedua tipe dengan *kind* `*`, dan menghasilkan sebuah tipe.
 Bagaimana GHCi tahu apa *kind* dari `Funny`?  Dia bisa melakukan *kind inference*,
 serupa dengan *type inference*. `Funny` adalah sebuah konstruktor tipe
-*higher-order*, serupa dengan `map` yang merupakansebuah fungsi *higher-order*.
+*higher-order*, serupa dengan `map` yang merupakan sebuah fungsi *higher-order*.
 Perhatikan bahwa tipe juga bisa diterapkan sebagian (*partially applied*)
 seperti fungsi:
 
