@@ -4,7 +4,6 @@ pre {
 
 body {
     font-family: Sans;
-    color: black;
     font-size: 13px;
     margin: 0px auto 0px auto;
     padding: 0 10px;
@@ -24,17 +23,13 @@ body {
 
 #header #menu {
     min-width: 30%;
-    text-align: right;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 16px;
 }
 
 #header #menu a {
-    color: black;
-    margin-right: 5px;
-    text-transform: uppercase;
+    margin-left: 5px;
 }
 
 #footer {
