@@ -40,3 +40,30 @@ cabal build
 dist/build/site/site watch
 ```
 
+## Membuat Meteri Pembelajaran versi PDF
+
+Salah satu cara untuk menghasilkan output pdf adalah dengan menggunakan program
+pendukung `pandoc` dan `pdflatex`.
+
+
+**Install `pandoc` dan `pdflatex` pada Linux Ubuntu**
+
+```
+sudo apt-get install pandoc
+sudo apt-get install texlive-latex-base
+```
+
+**OS-X**
+
+```
+brew install pandoc
+brew install cask install basictex
+```
+
+Kemudian, masuk ke direktori `provider/lectures` dimana tersedia kode sumber
+literate haskell untuk buku "Dasar Haskell" dan generate pdf dengan `pandoc`:
+
+```
+cd provider/lectures
+pandoc -t latex --latex-engine=xelatex -o /tmp/dasar-haskell.pdf *.lhs
+```
