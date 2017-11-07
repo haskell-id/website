@@ -50,3 +50,7 @@ deploy:
     secure: "oakiKBIqxhdTsADBDJnGShcpWnUFX8JPllIEZvLEI8W1tfDKFvgaCRaD1+gj6H0vtne+tpXOgI4OScpObML4z5QEUjIGyna0UbvbX98zeO6diB8ZmvAm6f2JFdPv/J6C002yGFUtQtPYGtv9KJ/g6IKUCdFgxbv1MRNKY+M1rWM="
   on:
     branch: master
+
+notifications:
+  email:
+    on_success: never
