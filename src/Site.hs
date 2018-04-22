@@ -45,12 +45,6 @@ siteIndex = match "index.html" $ do
 templates :: Rules ()
 templates = match "templates/*" $ compile templateCompiler
 
-cname :: Rules ()
-cname = match "CNAME" $ do
-  route idRoute
-  compile copyFileCompiler
-
-
 -- static
 static :: Rules ()
 static = match "static/**" $ do
