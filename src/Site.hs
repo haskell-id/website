@@ -67,9 +67,8 @@ cssCompressor = match "static/css/*" $ do
 
 hakyllConf :: Configuration
 hakyllConf = defaultConfiguration {
-      deployCommand = "rsync -arvzc _site/ ../haskell-id.github.io/"
-   ,  providerDirectory = "provider"
-   }
+  providerDirectory = "provider"
+  }
 
 main :: IO ()
 main = hakyllWith hakyllConf $ do
