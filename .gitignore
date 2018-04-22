@@ -4,11 +4,13 @@ cabal-dev
 *.hi
 *.chi
 *.chs.h
+.ghc.environment*
 .virtualenv
 .hsenv
 .cabal-sandbox/
 .stack-work/
 cabal.sandbox.config
 cabal.config
+dist-newstyle/
 _cache/
 _site/
