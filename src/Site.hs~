@@ -80,4 +80,5 @@ main = hakyllWith hakyllConf $ do
   lectureRaw
   templates
   siteIndex
+  cname
 
