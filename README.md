@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/haskell-id/website.svg?branch=master)](https://travis-ci.org/haskell-id/website)
+
 # Website Haskell-id
 
 Kode sumber website haskell-id. Powered by [hakyll](http://jaspervdj.be/hakyll/index.html)
