@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: fpco/stack-build:nightly-2018-05-02
+    steps:
+      - checkout
+      - run: stack --version
+
+workflows:
+  version: 2
+  run:
+    jobs:
+      - build
