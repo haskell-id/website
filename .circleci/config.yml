@@ -2,10 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: fpco/stack-build:nightly-2018-05-02
+      - image: haskell
     steps:
       - checkout
-      - run: stack --version
+      - run: ghc --version
 
 workflows:
   version: 2
