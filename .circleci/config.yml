@@ -2,10 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: haskell
+      #- image: haskell
+      - image: phadej/ghc:8.4.2
     steps:
       - checkout
       - run: ghc --version
+      - run: cabal --version
+      - run: stack --version
 
 workflows:
   version: 2
