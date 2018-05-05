@@ -42,7 +42,7 @@ cabal build
 dist/build/site/site watch
 ```
 
-## Membuat Meteri Pembelajaran versi PDF
+## Membuat Materi Pembelajaran versi PDF
 
 Salah satu cara untuk menghasilkan output pdf adalah dengan menggunakan program
 pendukung `pandoc` dan `pdflatex`.
