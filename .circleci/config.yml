@@ -8,8 +8,16 @@ jobs:
       - checkout
       - run: apt update 
       - run: apt install unzip
+      - restore-cache:
+          keys:
+            - cabal-{{ checksum "website.cabal" }}
       - run: cabal update
       - run: cabal new-build
+      - save-cache:
+          key: cabal-{{ checksum "website.cabal" }}
+          paths:
+            - "~/.cabal/store"
+            - "dist-newstyle/build"
 
 workflows:
   version: 2
