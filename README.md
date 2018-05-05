@@ -1,7 +1,9 @@
-[![Build Status](https://travis-ci.org/haskell-id/website.svg?branch=master)](https://travis-ci.org/haskell-id/website)
-[![CircleCI](https://circleci.com/gh/haskell-id/website.svg?style=svg)](https://circleci.com/gh/haskell-id/website)
-
 # Website Haskell-id
+
+|Build| Status
+|-----|-----------------------------------------------------------------------------------------------------------------
+|[Stack](https://docs.haskellstack.org/)|[![blabla](https://travis-ci.org/haskell-id/website.svg?branch=master)](https://travis-ci.org/haskell-id/website)
+|[Cabal](https://www.haskell.org/cabal/)|[![bsaabsb](https://circleci.com/gh/haskell-id/website.svg?style=svg)](https://circleci.com/gh/haskell-id/website)
 
 Kode sumber website haskell-id. Powered by [hakyll](http://jaspervdj.be/hakyll/index.html)
 
@@ -17,22 +19,20 @@ Mohon bantuan saran/kritik/koreksi baik dari kesalahan tulis maupun terjemahan y
 - `cd website/`
 - `stack setup`
 - `stack build`
-- `stack exec site watch`
+- `stack exec site [COMMAND]`
 
 Penjelasan lebih lengkap terdapat di [sini](http://haskell.web.id/install.html).
 
 
-**Menggunakan Cabal Sandbox**
+**Menggunakan Cabal**
 
-- GHC (Glasgow Haskell Compiler) 7.10
-- cabal minimal versi 1.18 (fitur sandbox)
+- GHC (Glasgow Haskell Compiler) 8.4.2
 
 ```
 git clone git@github.com:haskell-id/website.git
 cd website/
-cabal sandbox init
-cabal install
-./.cabal-sandbox/bin/site watch
+cabal new-build
+cabal new-run site [COMMAND]
 ```
 
 **Menggunakan Nix/NixOS**
