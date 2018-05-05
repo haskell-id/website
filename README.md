@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/haskell-id/website.svg?branch=master)](https://travis-ci.org/haskell-id/website)
+[![CircleCI](https://circleci.com/gh/haskell-id/website.svg?style=svg)](https://circleci.com/gh/haskell-id/website)
 
 # Website Haskell-id
 
