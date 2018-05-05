@@ -6,6 +6,7 @@ jobs:
       - image: phadej/ghc:8.4.2
     steps:
       - checkout
+      - run: apt update 
       - run: apt install unzip
       - run: cabal update
       - run: cabal new-build
