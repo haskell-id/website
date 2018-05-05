@@ -6,9 +6,8 @@ jobs:
       - image: phadej/ghc:8.4.2
     steps:
       - checkout
-      - run: ghc --version
-      - run: cabal --version
-      - run: stack --version
+      - run: cabal update
+      - run: cabal new-build
 
 workflows:
   version: 2
