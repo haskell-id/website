@@ -15,24 +15,22 @@ Mohon bantuan saran/kritik/koreksi baik dari kesalahan tulis maupun terjemahan y
 ## Menjalankan secara Lokal
 
 **Menggunakan Stack**
-- `git clone git@github.com:haskell-id/website.git`
-- `cd website/`
-- `stack setup`
-- `stack build`
-- `stack exec site [COMMAND]`
+`git clone git@github.com:haskell-id/website.git`
+`cd website/`
+`stack setup`
+`stack build`
+`stack exec site watch`
 
 Penjelasan lebih lengkap terdapat di [sini](http://haskell.web.id/install.html).
 
 
-**Menggunakan Cabal**
-
-- GHC (Glasgow Haskell Compiler) 8.4.2
-
+**Menggunakan Cabal & GHC 8.4.2*
 ```
+# Membutuhkan aplikasi unzip (biasanya tersedia di OS linux/mac)
 git clone git@github.com:haskell-id/website.git
 cd website/
 cabal new-build
-cabal new-run site [COMMAND]
+cabal new-run site watch
 ```
 
 **Menggunakan Nix/NixOS**
