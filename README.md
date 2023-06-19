@@ -13,33 +13,13 @@ Mohon bantuan saran/kritik/koreksi baik dari kesalahan tulis maupun terjemahan y
 
 
 ## Menjalankan secara Lokal
-
-**Menggunakan Stack**
+**Menggunakan Cabal 3.10.1 & GHC 9.6.2**
 ```
+# Mungkin membutuhkan aplikasi libnuma-dev di Debian/Ubuntu
 git clone git@github.com:haskell-id/website.git
 cd website/
-stack setup
-stack build
-stack exec site watch`
-```
-Penjelasan lebih lengkap terdapat di [sini](http://haskell.web.id/install.html).
-
-
-**Menggunakan Cabal & GHC 8.4.2**
-```
-# Membutuhkan aplikasi unzip (biasanya tersedia di OS linux/mac)
-git clone git@github.com:haskell-id/website.git
-cd website/
-cabal new-build
-cabal new-run site watch
-```
-
-**Menggunakan Nix/NixOS**
-
-```
-nix-shell
 cabal build
-dist/build/site/site watch
+cabal run site watch
 ```
 
 ## Membuat Materi Pembelajaran versi PDF

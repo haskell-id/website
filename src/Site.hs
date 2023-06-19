@@ -2,7 +2,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 import           Hakyll
-import           Text.Highlighting.Kate (pygments, styleToCss)
+import           Skylighting.Format.HTML (styleToCss)
+import           Skylighting.Styles (pygments)
 -------------------------------------------------------------------------------
 
 -- SITE CONTENT
