@@ -13,14 +13,15 @@ Mohon bantuan saran/kritik/koreksi baik dari kesalahan tulis maupun terjemahan y
 
 
 ## Menjalankan secara Lokal
-**Menggunakan Cabal 3.10.1 & GHC 9.6.2**
 ```
+# Dites di Cabal 3.10.1 & GHC 9.6.2
 # Mungkin membutuhkan aplikasi libnuma-dev di Debian/Ubuntu
 git clone git@github.com:haskell-id/website.git
 cd website/
 cabal build
 cabal run site watch
 ```
+
 
 ## Membuat Materi Pembelajaran versi PDF
 
