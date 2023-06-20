@@ -1,9 +1,5 @@
 # Website Haskell-id
-
-|Build| Status
-|-----|-----------------------------------------------------------------------------------------------------------------
-|[Stack](https://docs.haskellstack.org/)|[![blabla](https://travis-ci.org/haskell-id/website.svg?branch=master)](https://travis-ci.org/haskell-id/website)
-|[Cabal](https://www.haskell.org/cabal/)|[![bsaabsb](https://circleci.com/gh/haskell-id/website.svg?style=svg)](https://circleci.com/gh/haskell-id/website)
+![Build](https://github.com/haskell-id/website/actions/workflows/haskell.yml/badge.svg)
 
 Kode sumber website haskell-id. Powered by [hakyll](http://jaspervdj.be/hakyll/index.html)
 
